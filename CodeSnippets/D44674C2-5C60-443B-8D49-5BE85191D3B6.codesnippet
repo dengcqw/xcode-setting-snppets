@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djRACSyncChainOperations</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    // synchronous chain of operations sample
+    [[[[service connect] flattenMap:^RACStream *(id value) {
+        return [service doSomething1];
+    }] flattenMap:^RACStream *(id something1Value) {
+        // if doSomething1 is successful, 'somethingValue' is passed via sendNext
+        return [service disconnect];
+    }] subscribeError:^(NSError *error) {
+        // Error occurred!  Handle "error" if necessary.
+    } completed:^{
+        // Asynchronous chain of operations succeeded.
+    }];
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>D44674C2-5C60-443B-8D49-5BE85191D3B6</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>RAC - sync chain operations sample</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

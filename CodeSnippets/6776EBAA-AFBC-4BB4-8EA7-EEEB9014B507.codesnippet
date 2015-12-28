@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djGestureDoubleTap</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>// 另外有个文件在filesnippt文件夹中关于gesture
+// 可override gesture 类，并添加新属性
+- (void)addTapGesture:(UIView *)view {
+    UITapGestureRecognizer *doubleTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTap:)];
+    doubleTapRecognizer.numberOfTapsRequired = 2;
+    // delay the sending of touchesBegan:withEvent: to its view if it is still possible for the gesture to be recognized.
+    doubleTapRecognizer.delaysTouchesBegan = YES;
+    [view addGestureRecognizer:doubleTapRecognizer];
+}
+
+- (void)doubleTap:(UIGestureRecognizer *)gr {
+    NSLog(@"Double Tap");
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>6776EBAA-AFBC-4BB4-8EA7-EEEB9014B507</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>UI -  Tap Gesture Recognize</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

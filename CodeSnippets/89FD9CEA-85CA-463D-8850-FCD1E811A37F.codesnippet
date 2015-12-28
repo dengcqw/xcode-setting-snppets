@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djCaAnimBasic</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    CABasicAnimation *basicAnim = [CABasicAnimation animationWithKeyPath:@"&lt;#?#&gt;"];
+    
+    // CAMediaTiming protocal
+    basicAnim.beginTime = CFAbsoluteTimeGetCurrent();
+    basicAnim.duration = 5;
+    basicAnim.repeatCount = 5;
+    basicAnim.repeatDuration = 5;
+    basicAnim.autoreverses = YES;
+    basicAnim.speed = 2;
+    basicAnim.timeOffset = 5;
+    basicAnim.fillMode = kCAFillModeBackwards;
+    
+    // CAAnimation attribute
+    basicAnim.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
+    basicAnim.delegate = self; // -animationDidStart: &amp;&amp; -animationDisStop:
+    basicAnim.removedOnCompletion = YES;
+    
+    // CAPropertyAnimation
+    //basicAnim.keyPath = @"alpha";
+    basicAnim.additive = NO;
+    basicAnim.cumulative = NO;
+    basicAnim.valueFunction = nil;
+    
+    // CABasicAnimation
+    basicAnim.fromValue = (id)nil;
+    basicAnim.toValue = (id)nil;
+    basicAnim.byValue = (id)nil;
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>89FD9CEA-85CA-463D-8850-FCD1E811A37F</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Anim - CABasicAnimation </string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djFdAsyncRequest</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>TopLevel</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>NSURL *url = [[NSURL alloc] initWithString:&lt;#urlString#&gt;];
+NSMutableURLRequest  *request = [[NSMutableURLRequest alloc] initWithURL:url];
+NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+[url release];
+[request release];
+if(connection) {
+    receivedData = [[NSMutableData data] retain];
+    NSLog(@"intial done!");
+} else {
+    NSLog(@"sorry connection init error");
+}
+
+#pragma mark - NSURLConnection delegate method
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
+    NSLog(@"get the whole response");
+    [receivedData release];
+    receivedData = nil;
+    receivedData = [[NSMutableData alloc] init];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+    NSLog(@"get some data");
+    [receivedData appendData:data];
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+    //do something with the data
+    NSLog(@“succeeded  %d byte received", [receivedData length]);
+    [connection release];
+    [receivedData release];
+}
+          
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+    [connection release];
+    [receivedData release];
+    NSLog(@"Connection failed! Error - %@ %@",
+            [error localizedDescription],
+            [[error userInfo] objectForKey:NSErrorFailingURLStringKey]);
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>25D671CD-1BED-4CDA-8BAF-2EEC276265D9</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>sample and delegate method</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Fd - Network asynchronous request</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

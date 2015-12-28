@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djUIParagraphStyle</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    //设置前部间距 有\t 无效
+    [paragraphStyle setHeadIndent:20.0];
+    //最大宽度
+    [paragraphStyle setTailIndent:350.0];
+    //[paragraphStyle setLineBreakMode:NSLineBreakByCharWrapping];
+    //行间距
+    [paragraphStyle setLineSpacing:1.0];
+    
+    //设置\t 间距
+    //[paragraphStyle setDefaultTabInterval:50.0];
+    //行间距 \t 无效
+    [paragraphStyle setLineHeightMultiple:1.2];
+    //行间隔
+    //[paragraphStyle setParagraphSpacing:10.0];
+    //段落间距
+    [paragraphStyle setParagraphSpacingBefore:5.0];
+    //段落首行缩进
+    [paragraphStyle setFirstLineHeadIndent:size.height * 2.0 * 1.3];
+    self.defaultParagraphStyle = paragraphStyle;
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>A58E5399-019D-427D-939A-58AE27AE81AA</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>UI - paragraph style</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

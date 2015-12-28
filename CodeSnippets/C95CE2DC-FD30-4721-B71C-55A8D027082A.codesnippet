@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>GCDSemaphoreSample</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    // 创建一个信号量, 初始0，表示使用者要等待
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    
+    //NSURL *url = [NSURL URLWithString:URLString];
+    //__unused Photo *photo = [[Photo alloc]
+    //                         initwithURL:url
+    //                         withCompletionBlock:^(UIImage *image, NSError *error) {
+    //                             if (error) {
+    //                                 XCTFail(@"%@ failed. %@", URLString, error);
+    //                             }
+                                 
+                                 // 增加信号量1
+                                 dispatch_semaphore_signal(semaphore);
+     //                        }];
+    
+    // 阻塞了当前线程直到信号量被发射 超时之前等待信号量
+    dispatch_time_t timeoutTime = dispatch_time(DISPATCH_TIME_NOW, kDefaultTimeoutLengthInNanoSeconds);
+    if (dispatch_semaphore_wait(semaphore, timeoutTime)) { // 非零返回值表示到达超时
+        //XCTFail(@"%@ timed out", URLString);
+    }
+    
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>C95CE2DC-FD30-4721-B71C-55A8D027082A</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>GCD - semaphore sample</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

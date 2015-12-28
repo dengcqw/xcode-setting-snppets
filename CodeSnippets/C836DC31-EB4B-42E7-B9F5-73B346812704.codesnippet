@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djCaShapeLayer</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>// 路径覆盖整个视图
+UIBezierPath *outerPath = [UIBezierPath bezierPathWithRect:self.view.bounds];
+// 圆形路径
+UIBezierPath *innerPath = [UIBezierPath bezierPathWithOvalInRect: CGRectMake(100, 100, 50, 50)];
+// 添加路径，形成两个闭环路径
+[outerPath appendPath:innerPath];
+
+CAShapeLayer *shapeLayer = [CAShapeLayer layer];
+shapeLayer.path = outerPath.CGPath;
+shapeLayer.fillColor = [UIColor colorWithWhite:0.1 alpha:0.6].CGColor;
+// 只填充两个闭环间的路径
+shapeLayer.fillRule = kCAFillRuleEvenOdd;
+
+// 设置边线属性
+shapeLayer.strokeColor = [UIColor blueColor].CGColor;
+shapeLayer.lineWidth = 2.0;
+shapeLayer.lineDashPattern = [NSArray arrayWithObjects:[NSNumber numberWithInt:6], [NSNumber numberWithInt:2], nil];
+[self.view.layer addSublayer:shapeLayer];
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>C836DC31-EB4B-42E7-B9F5-73B346812704</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Ca - ShapeLayer</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

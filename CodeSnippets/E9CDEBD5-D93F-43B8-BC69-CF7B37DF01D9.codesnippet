@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djUIRandomColor</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>// Declare somewhere in your code
+typedef struct _Color {
+    CGFloat red, green, blue;
+} Color;
+
+static Color _colors[12] = {
+    {237, 230, 4},  // Yellow just to the left of center
+    {158, 209, 16}, // Next color clockwise (green)
+    {80, 181, 23},
+    {23, 144, 103},
+    {71, 110, 175},
+    {159, 73, 172},
+    {204, 66, 162},
+    {255, 59, 167},
+    {255, 88, 0},
+    {255, 129, 0},
+    {254, 172, 0},
+    {255, 204, 0}
+};
+
+- (UIColor *)randomColor {
+    Color randomColor = _colors[arc4random_uniform(12)];
+    return [UIColor colorWithRed:(randomColor.red / 255.0f) green:(randomColor.green / 255.0f) blue:(randomColor.blue / 255.0f) alpha:1.0f];
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>E9CDEBD5-D93F-43B8-BC69-CF7B37DF01D9</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>UI - random color</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

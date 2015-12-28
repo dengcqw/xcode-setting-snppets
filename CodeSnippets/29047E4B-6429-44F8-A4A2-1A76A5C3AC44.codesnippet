@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djFdListFile</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeExpression</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    NSFileManager *manager = [NSFileManager defaultManager];
+    NSString *home = [@"~" stringByExpandingTildeInPath];
+    NSDirectoryEnumerator *direnum = [manager enumeratorAtPath: home];
+    NSMutableArray *files = [NSMutableArray arrayWithCapacity: 42];
+    NSString *filename = nil;
+    while (filename = [direnum nextObject]) {
+        if ([[filename pathExtension]
+             isEqualTo: @"jpg"]) {
+            [files addObject: filename];
+        }
+    }
+    NSEnumerator *fileenum = [files objectEnumerator];
+    while (filename = [fileenum nextObject]) {
+        NSLog (@"%@", filename);
+    }
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>29047E4B-6429-44F8-A4A2-1A76A5C3AC44</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Fd - list file - file walker</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

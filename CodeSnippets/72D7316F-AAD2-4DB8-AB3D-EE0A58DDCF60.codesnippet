@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djUITextField</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    UITextField *textField = [[UITextField alloc] initWithFrame: CGRectMake(&lt;#CGFloat x#&gt;, &lt;#CGFloat y#&gt;, &lt;#CGFloat width#&gt;, &lt;#CGFloat height#&gt;)];
+    textField.placeholder = @"placeholder";
+    textField.font = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:40];
+    textField.textColor = [UIColor grayColor];
+    textField.adjustsFontSizeToFitWidth = YES;
+    textField.keyboardAppearance = UIKeyboardAppearanceDefault;
+    textField.keyboardType = UIKeyboardTypeNumberPad;
+    textField.textAlignment = NSTextAlignmentCenter;
+    textField.inputAccessoryView = nil;//  see snippet input accessory view
+    [self.view addSubview:textField];
+    // pop keyboard when appear
+    [textField becomeFirstResponder];
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>72D7316F-AAD2-4DB8-AB3D-EE0A58DDCF60</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>UI - text field</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

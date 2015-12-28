@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djNotifScreenRotation</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>[[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
+
+// [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedRotate:) name:UIDeviceOrientationDidChangeNotification object:nil];
+// [[NSNotificationCenter defaultCenter] removeObserver:self name:UIDeviceOrientationDidChangeNotification object:nil];
+/**
+ *  @brief  在view里，监听屏幕旋转通知
+ *
+ *  @param notification 屏幕旋转通知
+ */
+-(void)receivedRotate: (NSNotification *)notification {
+	dispatch_async(dispatch_get_main_queue(), ^(void) {
+        
+        [UIView animateWithDuration:0.2 animations:^(void) {
+            // 宽变成高，高变成宽
+        }];
+    });
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>0181E5B5-63F9-46AD-B9A2-242C6BE41EFF</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Notification - screen rotate orientation</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

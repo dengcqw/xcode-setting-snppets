@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djFdLogTimeInterval</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    NSTimeInterval start= [[NSDate date] timeIntervalSince1970];
+    NSLog(@"application terminate start...%f", start);
+    // code here
+    NSTimeInterval end= [[NSDate date] timeIntervalSince1970];
+    NSLog(@"application terminate end...%f", end);
+    NSLog(@"time interval to stop app:%f",end-start);
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>E0F92434-06CE-4A62-BE85-F4A5B8E61484</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Fd - log time interval</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

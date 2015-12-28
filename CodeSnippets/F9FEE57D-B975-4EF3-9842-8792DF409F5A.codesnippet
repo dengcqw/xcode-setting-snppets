@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>URLSessionUploadData</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeExpression</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    // upload data
+    NSMutableURLRequest *request = 
+    [[NSMutableURLRequest alloc] initWithURL:&lt;#url#&gt;];
+    [request setHTTPMethod:@"PUT"];
+    NSData *imageData = UIImageJPEGRepresentation(image, 0.6); 
+    NSURLSessionUploadTask *uploadTask =
+    [upLoadSession uploadTaskWithRequest:request
+                                fromData:imageData];
+    [uploadTask resume];
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>F9FEE57D-B975-4EF3-9842-8792DF409F5A</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>URLSession-upload data</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

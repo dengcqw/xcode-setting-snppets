@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djUIResizeImageMethod</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>/**
+ *  @brief  缩放图片
+ *
+ *  @param image       被缩放的图片
+ *  @param contentMode UIViewContentMode
+ *  @param bounds      缩放后的图片
+ *  @param quality     图片的质量
+ *
+ *  @return 缩放后的图片
+ */
+- (UIImage *)resizeImage:(UIImage *)image
+             contentMode:(UIViewContentMode)contentMode
+                  bounds:(CGSize)bounds
+    interpolationQuality:(CGInterpolationQuality)quality
+{
+    // 1. 确定新图的比例
+    CGFloat horizontalRatio = bounds.width / image.size.width;
+    CGFloat verticalRatio = bounds.height / image.size.height;
+    CGFloat ratio;
+    
+    switch (contentMode) {
+        case UIViewContentModeScaleAspectFill:
+            ratio = MAX(horizontalRatio, verticalRatio);
+            break;
+            
+        case UIViewContentModeScaleAspectFit:
+            ratio = MIN(horizontalRatio, verticalRatio);
+            break;
+            
+        default:
+            [NSException raise:NSInvalidArgumentException format:@"Unsupported content mode: %d", (int)contentMode];
+    }
+    
+    CGSize newSize = CGSizeMake(image.size.width * ratio, image.size.height * ratio);
+    
+    // 2. 是否变换长宽；如果当前图片是倒的，对应长宽在变换后会对调
+    BOOL drawTransposed;
+    
+    switch (image.imageOrientation) {
+        case UIImageOrientationLeft:
+        case UIImageOrientationLeftMirrored:
+        case UIImageOrientationRight:
+        case UIImageOrientationRightMirrored:
+            drawTransposed = YES;
+            break;
+            
+        default:
+            drawTransposed = NO;
+    }
+    
+    // 3. 调整图片方向
+    CGAffineTransform transform = CGAffineTransformIdentity;
+    
+// switch没有枚举全部变量
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wswitch"
+    
+    switch (image.imageOrientation) {
+        case UIImageOrientationDown:           // EXIF = 3
+        case UIImageOrientationDownMirrored:   // EXIF = 4
+            transform = CGAffineTransformTranslate(transform, newSize.width, newSize.height);
+            transform = CGAffineTransformRotate(transform, M_PI);
+            break;
+            
+        case UIImageOrientationLeft:           // EXIF = 6
+        case UIImageOrientationLeftMirrored:   // EXIF = 5
+            transform = CGAffineTransformTranslate(transform, newSize.width, 0);
+            transform = CGAffineTransformRotate(transform, M_PI_2);
+            break;
+            
+        case UIImageOrientationRight:          // EXIF = 8
+        case UIImageOrientationRightMirrored:  // EXIF = 7
+            transform = CGAffineTransformTranslate(transform, 0, newSize.height);
+            transform = CGAffineTransformRotate(transform, -M_PI_2);
+            break;
+    }
+    
+    switch (image.imageOrientation) {
+        case UIImageOrientationUpMirrored:     // EXIF = 2
+        case UIImageOrientationDownMirrored:   // EXIF = 4
+            transform = CGAffineTransformTranslate(transform, newSize.width, 0);
+            transform = CGAffineTransformScale(transform, -1, 1);
+            break;
+            
+        case UIImageOrientationLeftMirrored:   // EXIF = 5
+        case UIImageOrientationRightMirrored:  // EXIF = 7
+            transform = CGAffineTransformTranslate(transform, newSize.height, 0);
+            transform = CGAffineTransformScale(transform, -1, 1);
+            break;
+    }
+    
+#pragma clang diagnostic pop
+    
+    // CGRectIntegral 取整数
+    CGRect newRect = CGRectIntegral(CGRectMake(0, 0, newSize.width, newSize.height));
+    // 长宽对调
+    CGRect transposedRect = CGRectMake(0, 0, newRect.size.height, newRect.size.width);
+    CGImageRef imageRef = image.CGImage;
+    
+    CGContextRef bitmap = CGBitmapContextCreate(NULL,
+                                                newRect.size.width,
+                                                newRect.size.height,
+                                                CGImageGetBitsPerComponent(imageRef),
+                                                0,
+                                                CGImageGetColorSpace(imageRef),
+                                                CGImageGetBitmapInfo(imageRef));
+    
+    CGContextConcatCTM(bitmap, transform);
+    CGContextSetInterpolationQuality(bitmap, quality);
+    CGContextDrawImage(bitmap, drawTransposed ? transposedRect : newRect, imageRef);
+    CGImageRef newImageRef = CGBitmapContextCreateImage(bitmap);
+    UIImage *newImage = [UIImage imageWithCGImage:newImageRef];
+    
+    CGContextRelease(bitmap);
+    CGImageRelease(newImageRef);
+    
+    return newImage;
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>6047A690-67C0-4690-B1CA-D099A51DC421</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>UI - resize image method</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

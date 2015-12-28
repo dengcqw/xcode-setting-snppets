@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>xSetter</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (void)set&lt;#Value#&gt;:(BOOL)&lt;#Value#&gt; {
+	// Skip KVO notifications when the property hasn't actually changed. This is
+	// especially important because self.active can have very expensive
+	// observers attached.
+    // Anything else need added here
+    if (&lt;#Value#&gt; == _&lt;#Value#&gt;) return;
+
+    [self willChangeValueForKey:@keypath(self.&lt;#Value#&gt;)];
+    _&lt;#Value#&gt; = &lt;#Value#&gt;;
+    [self didChangeValueForKey:@keypath(self.&lt;#Value#&gt;)];
+}
+
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>70396BD3-381F-4706-AEF5-ABB843D3B128</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>xSetter  -  send kvo notif</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

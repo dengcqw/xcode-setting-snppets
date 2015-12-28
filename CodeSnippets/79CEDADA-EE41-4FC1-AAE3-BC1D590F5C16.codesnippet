@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djCaDisplayLink</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(displayLinkDidUpdate:)];
+self.displayLink.paused = YES;
+[self.displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
+
+-(void)displayLinkDidUpdate:(id)sender {}
+
+- (void)startAnimation{
+    self.beginTime = CACurrentMediaTime();
+    self.displayLink.paused = NO;
+}
+
+- (void)stopAnimation{
+    self.displayLink.paused = YES;
+    [self.displayLink invalidate];
+    self.displayLink = nil;
+}
+
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>79CEDADA-EE41-4FC1-AAE3-BC1D590F5C16</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>use for draw timer</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Ca - CADisplayLink</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

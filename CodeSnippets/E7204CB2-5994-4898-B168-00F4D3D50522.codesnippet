@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djUILabelTextHeight</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>/**
+ *  @brief  设置完label属性后，通过此方法获取label的高度
+ *
+ *  @param lbText  UILabel object
+ *
+ *  @return label height
+ *  @note  这个方法是否处理多行？
+ */
+- (double)getTextHeight:(UILabel *)lbText {
+    double textHeight = 0.0;
+    
+    if ([[[UIDevice currentDevice] systemVersion] doubleValue] &gt;= 7.0)
+    {
+        NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+        paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
+        NSDictionary *attributes = @{NSFontAttributeName:lbText.font, NSParagraphStyleAttributeName:paragraphStyle.copy};
+        CGFloat labelWidth = lbText.frame.size.width;
+        CGRect rect = [lbText.text boundingRectWithSize:CGSizeMake(labelWidth, MAXFLOAT)
+                                                options:NSStringDrawingUsesLineFragmentOrigin
+                                             attributes:attributes
+                                                context:nil];
+        
+        //  返回大于或者等于指定表达式的最小整数
+        textHeight = ceil(rect.size.height);
+    }
+    else
+    {
+        CGSize size = [lbText.text sizeWithFont:lbText.font
+                              constrainedToSize:CGSizeMake(lbText.frame.size.width, MAXFLOAT)
+                                  lineBreakMode:NSLineBreakByWordWrapping];
+        
+        textHeight = ceil(size.height);
+    }
+    
+    return textHeight;
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>E7204CB2-5994-4898-B168-00F4D3D50522</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>UI - label text height</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>jdCGDrawLayerToImage</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    // convert layer to image
+    // 1. get context with size
+    UIGraphicsBeginImageContext(size);
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    // 2. translate context
+    CGContextTranslateCTM(ctx, offsetX, 0);
+    // 3. rander layer
+    [layer renderInContext:ctx];
+    // 4. get image
+    UIImage *snapShot = UIGraphicsGetImageFromCurrentImageContext();
+    // 5. close context
+    UIGraphicsEndImageContext();
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>EAD3C49C-C768-4F92-894C-19739F6DC5EB</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>CG - draw layer to image</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

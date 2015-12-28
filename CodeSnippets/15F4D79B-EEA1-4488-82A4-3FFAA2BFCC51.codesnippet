@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djFdHooker</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>Class theClass = NSClassFromString(@"&lt;#?#&gt;");
+[Hooker hookMethod:@selector(&lt;#?#&gt;)
+           ofClass:theClass
+        withMethod:class_getInstanceMethod([self class], @selector(&lt;#?#&gt;))
+keepingOriginalWith:@selector(&lt;#?#&gt;)];
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>15F4D79B-EEA1-4488-82A4-3FFAA2BFCC51</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Fd - hooker method</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

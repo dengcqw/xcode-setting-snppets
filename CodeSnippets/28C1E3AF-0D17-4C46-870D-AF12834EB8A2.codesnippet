@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djUIMotionEffectTilt</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    // 倾斜效果
+    UIInterpolatingMotionEffect *verticalInterpolation = [[UIInterpolatingMotionEffect alloc]initWithKeyPath:@"center.y" type:UIInterpolatingMotionEffectTypeTiltAlongVerticalAxis];
+    verticalInterpolation.minimumRelativeValue = @(-15);
+    verticalInterpolation.maximumRelativeValue = @(15);
+    
+    UIInterpolatingMotionEffect *horizontalInterpolation = [[UIInterpolatingMotionEffect alloc]initWithKeyPath:@"center.x" type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
+    horizontalInterpolation.minimumRelativeValue = @(-15);
+    horizontalInterpolation.maximumRelativeValue = @(15);
+    
+    [self.&lt;#view#&gt; addMotionEffect:verticalInterpolation];
+    [self.&lt;#view#&gt; addMotionEffect:horizontalInterpolation];
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>28C1E3AF-0D17-4C46-870D-AF12834EB8A2</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>倾斜效果</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>UI - motion effect tilt</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

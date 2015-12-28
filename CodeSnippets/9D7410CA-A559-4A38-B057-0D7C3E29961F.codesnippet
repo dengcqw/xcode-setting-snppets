@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djUILogViewHierarchy</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>void dumpView(UIView* aView, NSString* indent) {
+    if (aView) {
+        NSLog(@"%@%@", indent, aView);      // dump this view
+        
+        if (aView.subviews.count &gt; 0) {
+            NSString* subIndent = [[NSString alloc] initWithFormat:@"%@%@",
+                                   indent, ([indent length]/2)%2==0 ? @"| " : @": "];
+            for (UIView* aSubview in aView.subviews) dumpView( aSubview, subIndent );
+            [subIndent release];
+        }
+    }
+}
+
+void dumpWindows() {
+    for (UIWindow* window in [UIApplication sharedApplication].windows) {
+        dumpView(window, @"dumpView: ");
+    }   
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>9D7410CA-A559-4A38-B057-0D7C3E29961F</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetPlatformFamily</key>
+	<string>iphoneos</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>UI - log UIView hierarchy iOS</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

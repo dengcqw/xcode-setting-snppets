@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>// 绘制锯齿边框，要点是保证没个点绘制在view的bounds内
+#define ZIG_SIZE 2.5
+- (void)drawRect:(CGRect)rect {
+    // Drawing code
+    UIBezierPath *mask = [UIBezierPath bezierPath];
+    // start from origin (0, 0)
+    [mask moveToPoint:CGPointZero];
+    CGFloat x = 0;
+    CGFloat y = 0;
+    CGFloat width = self.bounds.size.width;
+    CGFloat height = self.bounds.size.height;
+    
+    BOOL zig = YES;
+    
+    while (y &lt; height) { // zig-zag down the left edge
+        y+= ZIG_SIZE;
+        [mask addLineToPoint:CGPointMake(zig? ZIG_SIZE : 0,
+                                         y)];
+        zig = !zig;
+    }
+    
+    while (x &lt; width) { // bottom edge
+        x+= ZIG_SIZE;
+        [mask addLineToPoint:CGPointMake(x,
+                                         zig?(y-ZIG_SIZE):y)];
+        zig = !zig;
+    }
+    
+    while (y &gt; 0) { // zig-zag back up the right edge
+        y-= ZIG_SIZE;
+        [mask addLineToPoint:CGPointMake(width - (zig? ZIG_SIZE : 0),
+                                         y)];
+        zig = !zig;
+    }
+    
+    while (x &gt; 0 ) { // top edge
+        x-= ZIG_SIZE;
+        [mask addLineToPoint:CGPointMake(x,
+                                         zig?ZIG_SIZE:0)];
+        zig = !zig;
+    }
+    
+    [[UIColor purpleColor] set];
+    [mask fill];
+}
+
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>CC98D8A2-7023-4CEC-A1F3-69D0C383A3AF</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>CG - draw wave border</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

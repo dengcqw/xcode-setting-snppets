@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djFdColorStore</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    UIColor *textDefaultColor = [UIColor blackColor];    CGColorRef textDefaultColorRef = textDefaultColor.CGColor;    NSString *textDefaultColorStr = [CIColor colorWithCGColor:textDefaultColorRef].stringRepresentation;    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];    [userDefaults setObject:textDefaultColorStr forKey:@"textColorKey"];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>A9DE5CE7-51D4-4CCF-B1FE-0E7B364F6E01</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Fd - store color in NSUserDefaults</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

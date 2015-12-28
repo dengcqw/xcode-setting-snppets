@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djAVPlayer</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    NSString *moviePath = [[NSBundle mainBundle] pathForResource:@"mov_bbb" ofType:@"mp4"];
+    NSURL *movieURL = [NSURL fileURLWithPath:moviePath];
+
+    AVPlayer *player = [AVPlayer playerWithURL:movieURL];
+    player.actionAtItemEnd = AVPlayerActionAtItemEndNone;
+
+    AVPlayerLayer *layer = [AVPlayerLayer layer];
+
+    [layer setPlayer:player];
+    [layer setFrame:CGRectMake(0, 0, 1033, 568)];
+    [layer setBackgroundColor:[UIColor redColor].CGColor];
+    [layer setVideoGravity:AVLayerVideoGravityResizeAspectFill];
+
+    UIView *playerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1033, 568)];
+    [playerView.layer addSublayer:layer];
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>1A6E6759-F14C-433A-838C-CB3C18CD1306</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>AV - AVPlayer video player</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>GCDCustomDispatch</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>// DISPATCH_QUEUE_CONCURRENT 并行队列(系统内核高效管理,可大量生产)
+// DISPATCH_QUEUE_SERIAL 串行队列(也可以并行执行, 不可大量生产, 创建线程, 操作一个全局数据时候是线程安全)
+//
+dispatch_queue_t xxx_queue = dispatch_queue_create("com.ananzu.xxx_queue", DISPATCH_QUEUE_CONCURRENT);
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>1C071233-5D65-4101-9C7C-A43509BB57B8</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>GCD - Custom dispatch queue</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

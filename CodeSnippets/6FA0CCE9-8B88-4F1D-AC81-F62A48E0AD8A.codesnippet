@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djFdSyncRequest</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    // simple but block thread
+    NSURL *url = [[NSURL alloc] initWithString:&lt;#urlString#&gt;];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
+    NSError *err = nil;
+    NSData *data = [NSURLConnection sendSynchronousRequest:request
+                                         returningResponse:nil
+                                                     error:&amp;err];
+    if (data == nil) {
+        NSLog(@"Code:%ld,domain:%@,localizedDesc:%@",
+              [err code], [err domain], [err localizedDescription]);
+    } else { 
+        // process 
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>6FA0CCE9-8B88-4F1D-AC81-F62A48E0AD8A</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>simple but block thread</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Fd - Network synchronous request</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

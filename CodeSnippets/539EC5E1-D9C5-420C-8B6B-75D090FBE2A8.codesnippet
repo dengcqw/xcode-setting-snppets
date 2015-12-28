@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djSmpaleMotion</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (void)motionSample {
+    if (!_motionManager) {
+        _motionManager = [[CMMotionManager alloc] init];
+    }
+    
+    // 加速度器的检测
+    if ([self.motionManager isAccelerometerAvailable]){
+        NSLog(@"Accelerometer is available.");
+    } else{
+        NSLog(@"Accelerometer is not available.");
+    }
+    if ([self.motionManager isAccelerometerActive]){
+        NSLog(@"Accelerometer is active.");
+    } else {
+        NSLog(@"Accelerometer is not active.");
+    }
+    
+    // 陀螺仪的检测
+    if([self.motionManager isGyroAvailable]){
+        NSLog(@"Gryro is available.");
+    } else {
+        NSLog(@"Gyro is not available.");
+    }
+    if ([self.motionManager isGyroActive]){
+        NSLog(@"Gryo is active.");
+    } else {
+        NSLog(@"Gryo is not active.");
+    }
+    
+    // 1.push方式是实时获取到Accelerometer的数据，并且用相应的队列来显示
+    if ([self.motionManager isAccelerometerAvailable]){
+        
+        NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+        [self.motionManager startAccelerometerUpdatesToQueue: queue
+                                                 withHandler:^(CMAccelerometerData *accelerometerData, NSError *error) {
+                                                     
+                                                     NSLog(@"X = %.04f, Y = %.04f, Z = %.04f",accelerometerData.acceleration.x, accelerometerData.acceleration.y, accelerometerData.acceleration.z);
+                                                 }];
+    }
+    
+    // 2.pull方式 就是获取数据，如果要显示，就要向Accelerometer来索要数据
+    self.motionManager.accelerometerUpdateInterval = 0.01; // 告诉manager，更新频率是100Hz
+    [self.motionManager startAccelerometerUpdates]; // 开始更新，后台线程开始运行。
+    
+    // 陀螺仪的检测
+    if([self.motionManager isGyroAvailable]){
+        if ([self.motionManager  isGyroActive] == NO){
+            [self.motionManager  setGyroUpdateInterval:1.0f / 1.0f];
+            NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+            [self.motionManager startGyroUpdatesToQueue:queue
+                                            withHandler:^(CMGyroData *gyroData, NSError *error) {
+                                                NSLog(@"Gyro Rotation x = %.04f", gyroData.rotationRate.x);
+                                                NSLog(@"Gyro Rotation y = %.04f", gyroData.rotationRate.y);
+                                                NSLog(@"Gyro Rotation z = %.04f", gyroData.rotationRate.z);
+                                            }];
+            
+        }
+    }else {
+        NSLog(@"Gyro is not available.");
+    }
+    // 电子罗盘
+    if ([self.motionManager isMagnetometerAvailable]) {
+        [self.motionManager startMagnetometerUpdatesToQueue:[NSOperationQueue currentQueue] withHandler:^(CMMagnetometerData *magnetometerData, NSError *error) {
+        }];
+    }
+    
+    // 获取陀螺仪 加速度器 电子罗盘的数据
+    if ([self.motionManager isDeviceMotionAvailable]) {
+        [self.motionManager startDeviceMotionUpdatesToQueue:[NSOperationQueue currentQueue] withHandler:^(CMDeviceMotion *motion, NSError *error) {
+        }];
+    }
+    
+}
+
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>539EC5E1-D9C5-420C-8B6B-75D090FBE2A8</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Sample - Motion sample</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djUIImagePickerMovie</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>// import MobileCoreService framework
+- (void)showImagePicker {
+    UIImagePickerController *ipc = [[UIImagePickerController alloc] init];
+    ipc.sourceType = UIImagePickerControllerSourceTypeCamera;
+    //ipc.showsCameraControls = YES;
+    
+    NSArray *availableTypes = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeCamera];
+#if AllowVideoOnly
+    if ([availableTypes containsObject:(__bridge NSString *)kUTTypeMovie]) {
+        [ipc setMediaTypes:@[(__bridge NSString *)kUTTypeMovie]];
+    }
+#else
+    ipc.mediaTypes = availableTypes;
+#endif
+    
+    ipc.delegate = self;
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    NSURL *mediaURL = info[UIImagePickerControllerMediaURL];
+    if (mediaURL) {
+        // Make sure this device supports videos in its photo album.
+        if (UIVideoAtPathIsCompatibleWithSavedPhotosAlbum([mediaURL path])) {
+            // Save video to photo album.
+            UISaveVideoAtPathToSavedPhotosAlbum([mediaURL path], nil, nil, nil);
+            // remove the video from temporary direction.
+            [[NSFileManager defaultManager] removeItemAtPath:[mediaURL path] error:nil];
+        }
+    }
+}
+
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>69D2F0A5-ECB2-4E5B-9E46-02D9C1537F75</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>UI - image picker take movie</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

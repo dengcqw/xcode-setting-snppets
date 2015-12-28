@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djCaTransition</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (void)addTransitionAmination:(CALayer *)layer {
+    //CATransition类实现层的转场动画。你可以从一组预定义的转换或者通过提供定制的CIFilter实例来指定转场效果。
+    //定义个转场动画，父类是CAAnimation
+    //提供渐变效果:(推拉push效果,消退fade效果,揭开reveal效果)
+    CATransition *animation = [CATransition animation];
+    //转场动画持续时间
+    animation.duration = 0.2f;
+    //变化曲线
+    animation.timingFunction=UIViewAnimationCurveEaseInOut;
+    //转场动画类型, reveal显现
+    animation.type = kCATransitionReveal;
+    //转场动画将去的方向
+    animation.subtype = kCATransitionFromBottom;
+    // 控制整个动画的起始点和终止点，类似strokeStart,strokeEnd
+    animation.startProgress = 0.0f;
+    animation.endProgress = 0.0f;
+    // Core Image filter
+    animation.filter = nil;
+    //添加动画 （转场动画是添加在层上的动画）
+    [&lt;#?#&gt;.layer addAnimation:animation forKey:@"transition"];
+    
+    // 以下几种转场动画调用的苹果的私有API
+    /*
+     animation.type = @"cube";//---立方体
+     animation.type = @"suckEffect";//103 吸走的效果
+     animation.type = @"oglFlip";//When subType is "fromLeft" or "fromRight", it's the official one.
+     animation.type = @"rippleEffect";//110波纹效果
+     animation.type = @"pageCurl";//101翻页起来
+     animation.type = @"pageUnCurl";//102翻页下来
+     animation.type = @"cameraIrisHollowOpen ";//107//镜头开
+     animation.type = @"cameraIrisHollowClose ";//106镜头关
+     */
+}
+
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>DD007281-5857-4CD3-9433-21F3876CB451</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Anim - CATransition</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

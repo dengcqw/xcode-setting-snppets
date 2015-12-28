@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djSampleFilterEffect</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>/**
+ *  @brief  滤镜使用的例子
+ */
+- (void)applyFilterEffectOnImage {
+    UIImage *_inputImage = [UIImage imageNamed:@"xxxx"];
+    CIImage *image = [CIImage imageWithCGImage:_inputImage.CGImage];
+    
+    // Affine 变换
+    CIFilter *affineClampFilter = [CIFilter filterWithName:@"CIAffineClamp"];
+    [affineClampFilter setValue:image forKey:kCIInputImageKey];
+    CGAffineTransform xform = CGAffineTransformMakeScale(1.0, 1.0);
+    [affineClampFilter setValue:[NSValue valueWithBytes:&amp;xform objCType:@encode(CGAffineTransform)] forKey:@"inputTransform"];
+    
+    // Pixellate 像素化
+    CIFilter *pixellateFilter = [CIFilter filterWithName:@"CIPixellate"];
+    [pixellateFilter setDefaults];
+    // 前一个滤镜的输入做本滤镜的输入
+    [pixellateFilter setValue:affineClampFilter.outputImage forKey:kCIInputImageKey];
+    
+    CGFloat value; // 像素缩放比例
+    if (!self.isReverse) { // 从高到低，还是从低到高
+        //_startInputScale 开始值 _endInputScale 结束值 _filterProgress 当前比例(0.0-1.0)
+        value = _startInputScale + ((_endInputScale - _startInputScale) * _filterProgress);
+    } else {
+        value = _endInputScale + ((_startInputScale - _endInputScale) * _filterProgress);
+    }
+    
+    [pixellateFilter setValue:@(value) forKey:@"inputScale"];
+    CIVector *center = [CIVector vectorWithCGPoint:CGPointMake(image.extent.size.width / 2.0, image.extent.size.height / 2.0)];
+    [pixellateFilter setValue:center forKey:@"inputCenter"];
+    
+    // Crop
+    CIFilter *cropFilter = [CIFilter filterWithName: @"CICrop"];
+    [cropFilter setDefaults];
+    [cropFilter setValue:pixellateFilter.outputImage forKey:kCIInputImageKey];
+    // 以当前图片尺寸裁剪
+    [cropFilter setValue:[CIVector vectorWithX:0 Y:0 Z:_inputImage.size.width W:_inputImage.size.height] forKey:@"inputRectangle"];
+    
+    image = [cropFilter valueForKey:kCIOutputImageKey];
+    
+    CIContext *context = [CIContext contextWithOptions:nil];
+    CGImageRef imgRef = [context createCGImage:image fromRect:image.extent];
+    
+    [_imageView setImage:[UIImage imageWithCGImage:imgRef]];
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>D18BCEAA-3E20-4FA5-AB40-A390C4A7B4E3</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Sample - filter effect </string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

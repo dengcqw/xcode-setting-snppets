@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djUILineContainPoint</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (BOOL)lineContainPoint:(CGPoint)p {
+    // Find a line close to p
+    CGPoint start = CGPointZero;
+    CGPoint end = CGPointZero;
+    
+    // Check a few points on the line
+    for (float t = 0.0; t &lt;= 1.0; t += 0.05) {
+        float x = start.x + t * (end.x - start.x);
+        float y = start.y + t * (end.y - start.y);
+        
+        // If the tapped point is within 20 points, let's return this line
+        if (hypot(x - p.x, y - p.y) &lt; 20.0) {
+            return YES;
+        }
+    }
+    return NO;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>FA8C041F-F228-4445-9BBD-83BF602FB197</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>UI - Line contain point</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

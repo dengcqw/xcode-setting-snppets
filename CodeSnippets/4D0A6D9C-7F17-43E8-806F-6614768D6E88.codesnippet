@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djRACMulticastConnection</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    RACSubject *signal = [RACSubject subject];
+    RACMulticastConnection *connection = [signal multicast:[RACReplaySubject subject]];
+    [connection connect];
+    [connection.signal subscribeNext:^(id x) {
+        NSLog(@"first sub :%@",x);
+    }];
+    [connection.signal subscribeNext:^(id x) {
+        NSLog(@"second sub :%@",x);
+    }];
+    
+    for (NSUInteger i = 0; i&lt; 3; i++) {
+        [signal sendNext:@(i)];
+    }
+    
+    // 会获得所有3个值
+    [connection.signal subscribeNext:^(id x) {
+        NSLog(@"discription:%@",x);
+    }];
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>4D0A6D9C-7F17-43E8-806F-6614768D6E88</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>RAC - connection multicast sample</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

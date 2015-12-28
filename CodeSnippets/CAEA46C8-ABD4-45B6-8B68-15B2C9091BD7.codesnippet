@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djNSURLMethodSample</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (void)NSURLMethod {
+    NSURL *url = [NSURL URLWithString:@"http://www.baidu.com/search?id=1"];
+    NSLog(@"scheme:%@", [url scheme]); //协议 http
+    NSLog(@"host:%@", [url host]);     //域名 www.baidu.com
+    NSLog(@"absoluteString:%@", [url absoluteString]); //完整的url字符串 http://www.baidu.com:8080/search?id=1
+    //(刚才在真机上跑了一下，并没有打印出来端口 8080 啊)
+    NSLog(@"relativePath: %@", [url relativePath]); //相对路径 search
+    NSLog(@"port :%@", [url port]);  // 端口 8080
+    NSLog(@"path: %@", [url path]);  // 路径 search
+    NSLog(@"pathComponents:%@", [url pathComponents]); // search
+    NSLog(@"Query:%@", [url query]);  //参数 id=1
+ 
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>CAEA46C8-ABD4-45B6-8B68-15B2C9091BD7</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>NSURL method sample</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

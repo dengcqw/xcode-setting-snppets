@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djFdNotifQueue</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>NSNotification *notif = [NSNotification notificationWithName:&lt;#name#&gt; object:self];
+// simply delay notif
+[[NSNotificationQueue defaultQueue] enqueueNotification:notif postingStyle:NSPostASAP];
+// delay notif and coalescing
+NSArray *modes = [NSArray arrayWithObject: NSEventTrackingRunLoopMode];
+[[NSNotificationQueue defaultQueue] enqueueNotification: notif
+                                           postingStyle: NSPostWhenIdle
+                                           coalesceMask: NSNotificationCoalescingOnName | NSNotificationCoalescingOnSender
+                                               forModes: modes];
+// del a notif from queue
+[[NSNotificationQueue defaultQueue] dequeueNotificationsMatching: notif
+                                                    coalesceMask: NSNotificationCoalescingOnName | NSNotificationCoalescingOnSender];
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>91F988FD-76BA-472D-B393-EDC25F0DD9A0</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Fd - notifcation queue</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

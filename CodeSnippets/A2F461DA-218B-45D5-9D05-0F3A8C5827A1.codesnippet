@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>GCDDispatchSourceSample</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#define GCD_run_block_when_app_stop(block) runBlockWhenAppStop(block)
+
+// 使用场景
+// 1. 恶意攻击者将一个调试器连接到你的应用
+// 2. 在调试器里操纵的对象
+void runBlockWhenAppStop(void(^block)(void)) {
+#if DEBUG
+    dispatch_queue_t queue = dispatch_get_main_queue(); // 需要监听的queue
+    static dispatch_source_t source = nil;
+    __typeof(self) __weak weakSelf = self;
+    static dispatch_once_t onceToken;
+    dispatch_once(&amp;onceToken, ^{
+        // 参数设置文档
+        //https://developer.apple.com/library/mac/documentation/Performance/Reference/GCD_libdispatch_Ref/Reference/reference.html#//apple_ref/doc/constant_group/Dispatch_Source_Type_Constants
+        source = dispatch_source_create(DISPATCH_SOURCE_TYPE_SIGNAL, SIGSTOP, 0, queue);
+        if (source) { // 参数错误会导致创建失败
+            dispatch_source_set_event_handler(source, block);
+            dispatch_resume(source); // 默认关闭
+        }
+    });
+#endif
+}
+
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>A2F461DA-218B-45D5-9D05-0F3A8C5827A1</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>GCD - dispatch source sample</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

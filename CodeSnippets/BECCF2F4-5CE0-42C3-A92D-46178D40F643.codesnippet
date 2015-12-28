@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>// MPMoviePlayerViewController禁用快进快退按键
+[self listSubviewsOfView:avPlayerVC.moviePlayer.view andLevel: 0];
+- (void)listSubviewsOfView:(UIView *)view andLevel: (NSInteger)level {
+    
+    NSArray *subviews = [view subviews];
+    if ([subviews count] == 0) return;
+    for (UIView *subview in subviews) {
+        level++;
+        NSString *str = NSStringFromClass([subview class]);
+        if(subview.hidden == NO){
+            if([str isEqualToString:@"MPKnockoutButton"]) {
+                if (level== 19 || level== 18) {
+                    subview.userInteractionEnabled = NO;
+                }
+                // 17 stop btn
+                // 16 done btn
+            }
+        }
+        [self listSubviewsOfView:subview andLevel:level];
+    }
+}
+
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>BECCF2F4-5CE0-42C3-A92D-46178D40F643</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Trick - disable movie player button</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

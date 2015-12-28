@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djUIPageViewController</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeExpression</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    UIPageViewController *pageViewCtrl =
+        [[UIPageViewController alloc] initWithTransitionStyle:(UIPageViewControllerTransitionStyleScroll) // 左右滑动或翻页效果
+                                        navigationOrientation:(UIPageViewControllerNavigationOrientationHorizontal)// 水平或垂直方向切换页面
+                                                      options:nil];
+    // set nil will disable scroll
+    pageViewCtrl.dataSource = self;
+    pageViewCtrl.delegate = self;
+    [pageViewCtrl setViewControllers:@[]
+                           direction:(UIPageViewControllerNavigationDirectionForward) // 控制器的排序:顺序到倒序
+                            animated:NO
+                          completion:^(BOOL finished) {
+    }];
+	[self addChildViewController:pageViewCtrl];
+    pageViewCtrl.view.frame = CGRectMake(0,
+                                                    0,
+                                                    self.view.frame.size.width,
+                                                    self.view.frame.size.height);
+	[self.view addSubview:pageViewCtrl.view];
+	[pageViewCtrl didMoveToParentViewController:self];
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>4099826A-7CCF-466F-971F-743A464A5E59</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>UI - UIPageViewController</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

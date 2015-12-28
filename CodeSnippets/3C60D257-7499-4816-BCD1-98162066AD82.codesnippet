@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>GCDBlockGroupSample</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    dispatch_queue_t newQueue = dispatch_queue_create("new_test_queue", DISPATCH_QUEUE_CONCURRENT);
+    
+    dispatch_async(newQueue, ^{
+        dispatch_group_t group = dispatch_group_create();
+        for (NSInteger i = 0; i &lt; 10; i++) {
+            /* sample
+             *
+             dispatch_group_enter(group);
+             Photo *photo = [[Photo alloc] initwithURL:url withCompletionBlock:^(UIImage *image, NSError *_error) {
+                 if (_error) {
+                     error = _error;
+                 }
+                 dispatch_group_leave(downloadGroup);
+             }];
+             
+             [[PhotoManager sharedManager] addPhoto:photo];
+             */
+            
+            dispatch_group_enter(group); // start a task
+            // process here
+            dispatch_group_leave(group); // end a task
+        }
+        
+        long ret = dispatch_group_wait(group, DISPATCH_TIME_FOREVER); // block current queue
+        if (ret == 0) { // return non-zero for timeout
+            dispatch_async(dispatch_get_main_queue(), ^{ // completion
+                //if (completionBlock) {
+                //    completionBlock(error);
+                //}
+            });
+        } else {
+            // time out
+        }
+    });
+    </string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>3C60D257-7499-4816-BCD1-98162066AD82</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>GCD - block group sample</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djHFCell</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self) {
+        [self setBackgroundColor:[UIColor whiteColor]];
+        [self setSelectionStyle:UITableViewCellSelectionStyleNone];
+        self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+
+    }
+    
+    return self;
+}
+
+- (void)setObject:(NSObject *)object {
+    if (self.item != object) {
+        self.item = (&lt;#class#&gt; *)object;
+    }
+}
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+}
+
++ (NSNumber *)cellHeight {
+    return @45;
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>BEB60B0E-EB53-4ABC-AE1D-EF1559A57406</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>hf cell sample</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

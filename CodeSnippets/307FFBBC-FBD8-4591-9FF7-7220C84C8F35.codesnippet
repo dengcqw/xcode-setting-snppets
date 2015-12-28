@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djAVVidelOutputSetting</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (NSDictionary *)outputSetting {
+    NSDictionary *videoCleanApertureSettings = [NSDictionary dictionaryWithObjectsAndKeys:
+                                                [NSNumber numberWithInt:320], AVVideoCleanApertureWidthKey,
+                                                [NSNumber numberWithInt:480], AVVideoCleanApertureHeightKey,
+                                                [NSNumber numberWithInt:10], AVVideoCleanApertureHorizontalOffsetKey,
+                                                [NSNumber numberWithInt:10], AVVideoCleanApertureVerticalOffsetKey,
+                                                nil];
+    
+    
+    NSDictionary *videoAspectRatioSettings = [NSDictionary dictionaryWithObjectsAndKeys:
+                                              [NSNumber numberWithInt:3], AVVideoPixelAspectRatioHorizontalSpacingKey,
+                                              [NSNumber numberWithInt:3],AVVideoPixelAspectRatioVerticalSpacingKey,
+                                              nil];
+    
+    
+    
+    NSDictionary *codecSettings = [NSDictionary dictionaryWithObjectsAndKeys:
+                                   [NSNumber numberWithInt:960000], AVVideoAverageBitRateKey,
+                                   [NSNumber numberWithInt:1],AVVideoMaxKeyFrameIntervalKey,
+                                   AVVideoProfileLevelH264Main30, AVVideoProfileLevelKey,
+                                   //videoCleanApertureSettings, AVVideoCleanApertureKey,
+                                   //videoAspectRatioSettings, AVVideoPixelAspectRatioKey,
+                                   nil];
+    
+    
+    NSDictionary *videoSettings = [NSDictionary dictionaryWithObjectsAndKeys:
+                                   AVVideoCodecH264, AVVideoCodecKey,
+                                   codecSettings,AVVideoCompressionPropertiesKey,
+                                   [NSNumber numberWithInt:320], AVVideoWidthKey,
+                                   [NSNumber numberWithInt:480], AVVideoHeightKey,
+                                   nil];
+    return videoSettings;
+    
+}
+
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>307FFBBC-FBD8-4591-9FF7-7220C84C8F35</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>AV - video output setting</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

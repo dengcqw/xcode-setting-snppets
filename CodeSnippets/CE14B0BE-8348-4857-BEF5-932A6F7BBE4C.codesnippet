@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djTrickPerspect</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>/*
+ *  平行投影转透视投影公式
+ *  @orignalTransform       需要进行转换的对象
+ *  @center     投影中心
+ *  @disZ       (m34 = -1.0f/disZ) 透视效果，要操作的这个对象要有旋转的角度，否则没有效果。
+                当然,z方向上得有变化才会有透视效果m34的默认值是0，也就是说disZ无穷大，
+                这意味layer in projection plane（投射面）和layer in world coordinate重合了。 
+                disZ越小透视效果越明显。
+ *  @example
+        [UIView animateWithDuration:1.0 animations:^{
+            CATransform3D tempTransform = CATransform3DMakeRotation(-M_PI/5, 1, 0, 0);
+            CATransform3D rotateTransform= [self CATransform3DPerspect:tempTransform WithCenter: CGPointMake(0, 0) WithDisZ:400];
+            self.avatarImage.layer.transform=rotateTransform;
+        }];
+ */
+- (CATransform3D)CATransform3DPerspect:(CATransform3D)orignalTransform WithCenter:(CGPoint)center WithDisZ:(float)disZ {
+    return CATransform3DConcat(orignalTransform, [self CATransform3DMakePerspective:center WithDisZ:disZ]);
+}
+
+- (CATransform3D)CATransform3DMakePerspective:(CGPoint)center WithDisZ:(float)disZ {
+    CATransform3D transToCenter = CATransform3DMakeTranslation(-center.x, -center.y, 0);
+    CATransform3D transBack = CATransform3DMakeTranslation(center.x, center.y, 0);
+    CATransform3D scale = CATransform3DIdentity;
+    scale.m34 = -1.0f/disZ;
+    return CATransform3DConcat(CATransform3DConcat(transToCenter, scale), transBack);
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>CE14B0BE-8348-4857-BEF5-932A6F7BBE4C</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Trick - 投影 perspect</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

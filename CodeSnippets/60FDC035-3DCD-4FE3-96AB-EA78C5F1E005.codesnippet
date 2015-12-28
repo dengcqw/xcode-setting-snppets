@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djSampleAddressBook</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#pragma mark - Contacts
+@import AddressBook;
+
+- (void)fetchContacts {
+    ABAddressBookRef addressBook = ABAddressBookCreateWithOptions(nil, nil);
+
+    if (ABAddressBookRequestAccessWithCompletion != NULL) {
+        ABAddressBookRequestAccessWithCompletion(addressBook, ^(bool granted, CFErrorRef error) {
+             if (granted)
+             {
+                 [self getContactsWithAddressBook:addressBook];
+                 // refresh view or other
+             }
+        });
+    }
+}
+
+- (void)getContactsWithAddressBook:(ABAddressBookRef)addressBook {
+    // 默认头像
+    NSData *facebookImageData = UIImagePNGRepresentation([UIImage imageNamed:@"bond"]);
+
+    _contacts = [NSMutableArray new];
+    CFArrayRef allPeople = ABAddressBookCopyArrayOfAllPeople(addressBook);
+	CFIndex nPeople = ABAddressBookGetPersonCount(addressBook);
+
+    for (NSUInteger i=0;i &lt; nPeople;i++) {
+		NSMutableDictionary *dOfPerson = [NSMutableDictionary new];
+
+        // 一条通信记录
+		ABRecordRef person = CFArrayGetValueAtIndex(allPeople,i);
+
+        // 手机号，会有多个号码
+		ABMultiValueRef phones =(__bridge ABMultiValueRef)((__bridge NSString*)ABRecordCopyValue(person, kABPersonPhoneProperty));
+        // 名字
+        CFStringRef firstName, lastName;
+		firstName = ABRecordCopyValue(person, kABPersonFirstNameProperty);
+		lastName  = ABRecordCopyValue(person, kABPersonLastNameProperty);
+        
+        [dOfPerson setObject:[NSString stringWithFormat:@"%@",firstName] forKey:@"firstName"];
+        [dOfPerson setObject:[NSString stringWithFormat:@"%@",lastName] forKey:@"lastName"];
+		[dOfPerson setObject:[NSString stringWithFormat:@"%@ %@", firstName, lastName] forKey:@"name"];
+
+        // 手机号码类型，家庭，工作，主号等
+		NSString *mobileLabel;
+		for(CFIndex i = 0; i &lt; ABMultiValueGetCount(phones); i++) {
+			mobileLabel = (__bridge NSString*)ABMultiValueCopyLabelAtIndex(phones, i);
+			if([mobileLabel isEqualToString:(NSString *)kABPersonPhoneMobileLabel])
+			{
+				[dOfPerson setObject:[CleanPhoneNumber clean:(__bridge NSString*)ABMultiValueCopyValueAtIndex(phones, i)] forKey:@"phone"];
+			}
+			else if ([mobileLabel isEqualToString:(NSString*)kABPersonPhoneIPhoneLabel])
+			{
+				[dOfPerson setObject:[CleanPhoneNumber clean:(__bridge NSString*)ABMultiValueCopyValueAtIndex(phones, i)] forKey:@"phone"];
+				break;
+			}
+        }
+
+        // 头像
+        if (ABPersonHasImageData(person)) {
+            NSData *contactImageData = (__bridge NSData *)ABPersonCopyImageDataWithFormat(person, kABPersonImageFormatThumbnail);
+            [dOfPerson setObject:[UIImage imageWithData:contactImageData] forKey:@"image"];
+        } else {
+            [dOfPerson setObject:facebookImageData forKey:@"image"];
+        }
+        
+        if (dOfPerson[@"phone"] &amp;&amp; dOfPerson[@"image"]) {
+            [_contacts addObject:dOfPerson];
+        }
+	}
+    // 按名字排序
+    [_contacts sortUsingDescriptors:[NSArray arrayWithObjects:[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES], nil]];
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>60FDC035-3DCD-4FE3-96AB-EA78C5F1E005</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Sample - address book ABAddressBook</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

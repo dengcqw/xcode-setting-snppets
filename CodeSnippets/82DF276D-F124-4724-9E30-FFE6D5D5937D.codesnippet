@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djCAGradientMask</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (void)addGradientMaskOn:(UIView *)view {
+	CAGradientLayer *maskLayer = [CAGradientLayer layer];
+	maskLayer.frame = view.bounds;
+	maskLayer.colors = @[(id)[[UIColor clearColor] CGColor],
+						 (id)[[UIColor blackColor] CGColor],
+						 (id)[[UIColor blackColor] CGColor],
+						 (id)[[UIColor clearColor] CGColor]];
+	maskLayer.locations = @[@0.0, @0.33, @0.66, @1.0];
+	maskLayer.startPoint = CGPointMake(0.0, 0.0);
+	maskLayer.endPoint = CGPointMake(1.0, 0.0);
+	view.layer.mask = maskLayer;
+}
+
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>82DF276D-F124-4724-9E30-FFE6D5D5937D</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Ca - add Gradient layer as Mask </string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

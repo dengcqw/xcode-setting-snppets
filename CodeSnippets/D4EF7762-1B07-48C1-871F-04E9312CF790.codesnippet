@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>GCDNonBlockGroupSample</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    dispatch_group_t xxx_group = dispatch_group_create();
+    
+    for (NSInteger i = 0; i &lt; 3; i++) {
+        /* sample
+        dispatch_group_enter(xxx_group); // 2
+        Photo *photo = [[Photo alloc] initwithURL:url
+                              withCompletionBlock:^(UIImage *image, NSError *_error) {
+                                  if (_error) {
+                                      error = _error;
+                                  }
+                                  dispatch_group_leave(xxx_group); // 3
+                              }];
+        
+        [[PhotoManager sharedManager] addPhoto:photo];
+         */
+        dispatch_group_enter(xxx_group);
+        dispatch_group_leave(xxx_group);
+    }
+    dispatch_group_notify(xxx_group, dispatch_get_main_queue(), ^{
+        //if (completionBlock) {
+        //    completionBlock(error);
+        //}
+    });
+    
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>D4EF7762-1B07-48C1-871F-04E9312CF790</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>GCD - non block group sample</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

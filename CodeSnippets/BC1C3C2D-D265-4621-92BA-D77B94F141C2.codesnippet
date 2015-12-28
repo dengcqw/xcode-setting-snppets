@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djCaAnimKeyframe</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    CAKeyframeAnimation *keyAnim = [CAKeyframeAnimation animationWithKeyPath:@"&lt;#?#&gt;"];
+    
+    // CAMediaTiming protocal
+    keyAnim.beginTime = CFAbsoluteTimeGetCurrent();
+    keyAnim.duration = 5;
+    keyAnim.repeatCount = 5;
+    keyAnim.repeatDuration = 5;
+    keyAnim.autoreverses = YES;
+    keyAnim.speed = 2;
+    keyAnim.timeOffset = 5;
+    keyAnim.fillMode = kCAFillModeBackwards;
+    
+    // CAAnimation attribute
+    keyAnim.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
+    keyAnim.delegate = self; // -animationDidStart: &amp;&amp; -animationDisStop:
+    keyAnim.removedOnCompletion = YES;
+    
+    // CAPropertyAnimation
+    //basicAnim.keyPath = @"alpha";
+    keyAnim.additive = NO;
+    keyAnim.cumulative = NO;
+    keyAnim.valueFunction = nil;
+    
+    // CAKeyframeAnimation
+    keyAnim.values = @[];
+    keyAnim.keyTimes = @[];
+    keyAnim.timingFunctions = @[];
+    keyAnim.calculationMode = @"linear";
+    
+    keyAnim.tensionValues = @[];
+    keyAnim.continuityValues = @[];
+    keyAnim.biasValues = @[];
+    keyAnim.rotationMode = nil;
+    keyAnim.path = (CGPathRef)nil;
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>BC1C3C2D-D265-4621-92BA-D77B94F141C2</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Anim - CAKeyframeAnimation</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

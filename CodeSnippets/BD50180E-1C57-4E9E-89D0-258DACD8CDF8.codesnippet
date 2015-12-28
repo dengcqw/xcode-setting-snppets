@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djCGScreenShotAndCrop</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    UIGraphicsBeginImageContext(CGSizeMake(260, 150));
+    // 只绘制（0，0，260，150）区域
+    [self.view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *screenshot = UIGraphicsGetImageFromCurrentImageContext();
+    // 按（60，40，200，110）剪裁
+    CGImageRef imageRef = CGImageCreateWithImageInRect([screenshot CGImage], CGRectMake(60, 40, 200, 110));
+    UIGraphicsEndImageContext();
+    UIImage *screenshotAfterCrop = [UIImage imageWithCGImage:imageRef];
+    CFRelease(imageRef);
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>BD50180E-1C57-4E9E-89D0-258DACD8CDF8</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>CG - screen shot and crop</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

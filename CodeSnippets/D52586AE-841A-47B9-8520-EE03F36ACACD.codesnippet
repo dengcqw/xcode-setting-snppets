@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>NSString *fixIconString(NSString *iconString) {
+    if (![iconString hasPrefix:@"0x"]) {
+        iconString = [NSString stringWithFormat:@"0x%@", iconString];
+    }
+    
+    unsigned int iconValue;
+    NSScanner* scanner = [NSScanner scannerWithString:iconString];
+    [scanner scanHexInt:&amp;iconValue];
+    return [[NSString alloc] initWithBytes:&amp;iconValue length:4 encoding:NSUTF32LittleEndianStringEncoding];
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>D52586AE-841A-47B9-8520-EE03F36ACACD</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>hex string to icon string</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

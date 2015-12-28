@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djUIScrollVewLayoutSubView</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (void)layoutScrollImages
+{
+	UIImageView *view = nil;
+	NSArray *subviews = [scrollView1 subviews];
+
+	// reposition all image subviews in a horizontal serial fashion
+	CGFloat curXLoc = 0;
+	for (view in subviews)
+	{
+		if ([view isKindOfClass:[UIImageView class]] &amp;&amp; view.tag &gt; 0)
+		{
+			CGRect frame = view.frame;
+			frame.origin = CGPointMake(curXLoc, 0);
+			view.frame = frame;
+			
+			curXLoc += (kScrollObjWidth);
+		}
+	}
+	
+	// set the content size so it can be scrollable
+	[scrollView1 setContentSize:CGSizeMake((kNumImages * kScrollObjWidth), [scrollView1 bounds].size.height)];
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>2500EC50-8E66-483F-9EA1-A199FD7AC217</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetPlatformFamily</key>
+	<string>iphoneos</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>UI - scroll view layout subview method</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

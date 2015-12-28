@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djFdDescription</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (NSString *)description {
+    return [NSString stringWithFormat:
+            @"&lt;%@"
+            @" &lt;#item1#&gt;: %@"
+            @", &lt;#item2#&gt;: '%@'"
+            @", &lt;#item3#&gt;: '%@'"
+            @"&gt;",
+            [super description],
+            self.&lt;#item1#&gt;,
+            self.&lt;#item2#&gt;,
+            self.&lt;#item3#&gt;];
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>F67E0970-E88A-4C8D-9858-FF0DA9BDE759</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Fd - overwrite description</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

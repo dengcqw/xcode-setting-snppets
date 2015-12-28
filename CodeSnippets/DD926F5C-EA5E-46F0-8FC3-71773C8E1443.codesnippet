@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djInitWithDefault</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (id)initWithDefault {
+    self = [super init];
+    if (self) {
+        self.cellClass = [PAUserTabAvatarCell class];
+        self.cellType =  [PAUserTabAvatarCell cellIdentifier];
+        self.cellHeight = [PAUserTabAvatarCell cellHeight];
+    }
+    return self;
+}
+
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>DD926F5C-EA5E-46F0-8FC3-71773C8E1443</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>init with default</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

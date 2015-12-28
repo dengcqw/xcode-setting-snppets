@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djUIlogViewHierarchy</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>TopLevel</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>@interface NSView (Dumping)
+-(void)dumpWithIndent:(NSString *)indent;
+@end
+
+@implementation NSView (Dumping)
+
+-(void)dumpWithIndent:(NSString *)indent {
+    NSString *class = NSStringFromClass([self class]);
+    NSString *info = @"";
+    if ([self respondsToSelector:@selector(title)]) {
+        NSString *title = [self performSelector:@selector(title)];
+        if (title != nil &amp;&amp; [title length] &gt; 0) {
+            info = [info stringByAppendingFormat:@" title=%@", title];
+        }
+    }
+    if ([self respondsToSelector:@selector(stringValue)]) {
+		NSString *string = [self performSelector:@selector(stringValue)];
+		if (string != nil &amp;&amp; [string length] &gt; 0) {
+			info = [info stringByAppendingFormat:@" stringValue=%@", string];
+        }
+	}
+	NSString *tooltip = [self toolTip];
+	if (tooltip != nil &amp;&amp; [tooltip length] &gt; 0) {
+		info = [info stringByAppendingFormat:@" tooltip=%@", tooltip];
+    }
+    
+	NSLog(@"%@%@%@", indent, class, info);
+    
+	if ([[self subviews] count] &gt; 0) {
+		NSString *subIndent = [NSString stringWithFormat:@"%@%@", indent, ([indent length]/2)%2==0 ? @"| " : @": "];
+		for (NSView *subview in [self subviews]) {
+			[subview dumpWithIndent:subIndent];
+        }
+	}
+}
+
+@end
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>B45E1459-6CA6-46BF-BB82-24AB958C411F</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetPlatformFamily</key>
+	<string>macosx</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>UI - log NSView hierarchy OSX</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

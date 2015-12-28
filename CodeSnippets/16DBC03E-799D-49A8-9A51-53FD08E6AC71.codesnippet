@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djFdFontDefine</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>// 流行字体，瘦字体
+#define FONT_HEITI_LIGHT_SIZE(s)            [UIFont fontWithName:@"STHeitiSC-Light" size:s]
+#define FONT_HEITI_LIGHT                    FONT_HEITI_LIGHT_SIZE(14.0f)
+#define FONT_HEITI_SIZE(s)                  [UIFont fontWithName:@"STHeitiSC" size:s]
+#define FONT_HEITI                          FONT_HEITI_SIZE(14.0f)
+#define FONT_HEITI_MEDIUM_SIZE(s)           [UIFont fontWithName:@"STHeitiSC-Medium" size:s]
+#define FONT_HEITI_MEDIUM                   FONT_HEITI_MEDIUM_SIZE(14.0f)
+
+#define FONT_HELVETICA_SIZE(s)              [UIFont fontWithName:@"Helvetica" size:s]
+#define FONT_HELVETICA_BOLD_SIZE(s)         [UIFont fontWithName:@"Helvetica-Bold" size:s]
+
+#define FONT_HELVETICA_NEUE_SIZE(s)         [UIFont fontWithName:@"Helvetica-Neue" size:s]
+#define FONT_HELVETICA_NEUE_LIGHT_SIZE(s)   [UIFont fontWithName:@"Helvetica-Neue-Light" size:s]
+
+#define FONT_SYSTEM_SIZE(s)                 [UIFont systemFontOfSize:s]
+#define FONT_BOLD_SYSTEM_SIZE(s)            [UIFont boldSystemFontOfSize:s]
+
+
+// 一个app统一使用一种字体
+UIFont* paNormalFontWithSize(CGFloat size);
+
+UIFont* paNormalFontWithSize(CGFloat size) {
+    UIFont* font = FONT_HELVETICA_NEUE_LIGHT_SIZE(size);
+    if (font == nil) {
+        font = FONT_HELVETICA_SIZE(size);
+    }
+    return font;
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>16DBC03E-799D-49A8-9A51-53FD08E6AC71</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C-Plus-Plus</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>流行字体宏定义</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Fd - font define</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

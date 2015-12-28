@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djUIToggleViewController</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    UINavigationController *navigationController = (UINavigationController *)self.rootViewController;
+    UITabBarController *tabController = [navigationController.viewControllers objectAtIndex:0];
+    [UIView transitionWithView:navigationController.view
+                      duration:0.4
+                       options:UIViewAnimationOptionCurveEaseInOut | UIViewAnimationOptionTransitionFlipFromRight | UIViewAnimationOptionBeginFromCurrentState
+                    animations:^{
+                        [tabController setViewControllers:[self haofangtuoViewControllers]
+                                                 animated:YES];
+                    }
+                    completion:nil];
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>7E5E69D5-C028-479A-A7D6-4D9480BDADAE</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>UI - toggle view controller</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

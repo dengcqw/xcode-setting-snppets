@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djUISizeThatFits</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>// UIView的子类，根据内部view计算合适的size，并返回
+- (CGSize)sizeThatFits:(CGSize)size {
+    // size the image
+    CGSize imageSize = [_imageView sizeThatFits:size];
+    
+    // size the text view
+    CGSize maxTextSize = CGSizeMake(size.width - imageSize.width, size.height);
+    CGSize textSize = [_textView sizeThatFits:maxTextSize];
+    
+    // make sure everything fits
+    CGFloat minHeight = MAX(imageSize.height, textSize.height);
+    return CGSizeMake(size.width, minHeight);
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>95700370-F5F7-4E48-82FF-C9B1BC50AACC</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>UIVIew - sizeThatFits sample</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djCALayerAnimKeyDefine</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>TopLevel</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//边界rect
+NSString * const kCALayerKeyBounds              = @"bounds";
+//中心点point
+NSString * const kCALayerKeyPosition            = @"position";
+//四个角半径
+NSString * const kCALayerKeyCornerRadius        = @"cornerRadius";
+//layer显示的次序 integer
+NSString * const kCALayerKeyZPosition           = @"zPosition";
+//背景色
+NSString * const kCALayerKeyBackgroundColor     = @"backgroundColor";
+//边界颜色
+NSString * const kCALayerKeyBorderColor         = @"borderColor";
+//边界线宽
+NSString * const kCALayerKeyBorderWidth         = @"borderWidth";
+//阴影颜色
+NSString * const kCALayerKeyShadowColor         = @"shadowColor";
+//阴影偏移point
+NSString * const kCALayerKeyShadowOffset        = @"shadowOffset";
+//透明度（0-1）
+NSString * const kCALayerKeyShadowOpacity       = @"shadowOpacity";
+//阴影半径
+NSString * const kCALayerKeyShaodwRadius        = @"shadowRadius";
+
+//设置绕x，y，z方向旋转的弧度值（NSNumber）
+NSString * const kCALayerKeyTransformRotationX      = @"transform.rotation.x";
+NSString * const kCALayerKeyTransformRotationY      = @"transform.rotation.y";
+NSString * const kCALayerKeyTransformRotationZ      = @"transform.rotation.z";
+//该设置和ratation.z是功能是一样的
+NSString * const kCALayerKeyTransformRotation       = @"transform.rotation";
+
+//设置在x，y，z轴上缩放因子（NSNumber）
+NSString * const kCALayerKeyTransformScaleX     = @"transform.scale.x";
+NSString * const kCALayerKeyTransformScaleY     = @"transform.scale.y";
+NSString * const kCALayerKeyTransformScaleZ     = @"transform.scale.z";
+//三个缩放因子的平均值
+NSString * const kCALayerKeyTransformScale      = @"transform.scale";
+
+//设置x，y，z轴方向的平移因子（NSNumber）
+NSString * const kCALayerKeyTransformTranslationX     = @"transform.translation.x";
+NSString * const kCALayerKeyTransformTranslationY     = @"transform.translation.y";
+NSString * const kCALayerKeyTransformTranslationZ     = @"transform.translation.z";
+//设置x和y轴上的平移（包含NSSize或CGSize数据类型的NSValue）
+NSString * const kCALayerKeyTransformTranslation      = @"transform.translation";
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>EDE4EEE3-A957-441F-BA8A-8C9244B00223</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Anim - CALayer animation key define</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

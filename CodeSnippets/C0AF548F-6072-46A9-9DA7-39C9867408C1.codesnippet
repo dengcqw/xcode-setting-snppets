@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    NSMutableArray* animationBlocks = [NSMutableArray new];
+    
+    typedef void(^animationBlock)(BOOL);
+    
+    // getNextAnimation
+    // removes the first block in the queue and returns it
+    animationBlock (^getNextAnimation)() = ^{
+        animationBlock block = animationBlocks.count ? (animationBlock)[animationBlocks objectAtIndex:0] : nil;
+        if (block){
+            [animationBlocks removeObjectAtIndex:0];
+            return block;
+        }else{
+            return ^(BOOL finished){};
+        }
+    };
+    
+    //block 1
+    [animationBlocks addObject:^(BOOL finished){;
+        [UIView animateWithDuration:0.2 delay:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+            bg.alpha = 1.0;
+        } completion: getNextAnimation()];
+    }];
+    
+    //block 2
+    [animationBlocks addObject:^(BOOL finished){;
+        [UIView animateWithDuration:0.25 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            alertView.alpha = 1;
+        } completion: getNextAnimation()];
+    }];
+    
+    //add a block to our queue
+    [animationBlocks addObject:^(BOOL finished){;
+        [self circleAnimation];
+    }];
+    
+    // execute the first block in the queue
+    getNextAnimation()(YES);
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>C0AF548F-6072-46A9-9DA7-39C9867408C1</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Smaple - chaining animation</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

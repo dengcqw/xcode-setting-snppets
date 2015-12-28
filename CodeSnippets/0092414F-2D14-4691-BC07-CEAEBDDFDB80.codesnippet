@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        unsigned int outCount   = 0;
+#if Property
+        objc_property_t *propertyList = class_copyPropertyList([self class], &amp;outCount);
+        
+        for (int i = 0; i &lt; outCount; i++) {
+            objc_property_t property = propertyList[i];
+            const char *name = property_getName(property);
+            NSString *key = [NSString stringWithCString:name encoding:(NSUTF8StringEncoding)];
+            id value = [aDecoder decodeObjectForKey:key];
+            [self setValue:(value?:@"") forKey:key];
+        }
+        free(propertyList);
+#else
+        Ivar * ivarList         = class_copyIvarList([self class], &amp;outCount);
+        
+        for (int i = 0; i &lt; outCount; i++) {
+            Ivar ivar           = ivarList[i];
+            const char * name   = ivar_getName(ivar);
+            NSString *key = [NSString stringWithCString:name encoding:(NSUTF8StringEncoding)];
+            // 为了简便，只处理string类型，需要其他类型的，写helper方法转换
+            [self setValue:([aDecoder decodeObjectForKey:key]?:@"")
+                    forKey:key];
+        }
+        free(ivarList);
+#endif
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>0092414F-2D14-4691-BC07-CEAEBDDFDB80</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>runtime - read var or property</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

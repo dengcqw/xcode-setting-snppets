@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djUIMenuCtrlSamples</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (void)deleteIt:(id)sender {
+    
+}
+
+- (void)showPopupMenu {
+    // For a menu controller to appear, a view that responds to at least one action message in the UIMenuController’s menu items must be the first responder of the window
+    // custom view need overwrite -|becomeFirstResponder|.
+    [self.view becomeFirstResponder];
+    UIMenuController *menu = [UIMenuController sharedMenuController];
+    // Create a new "Delete" UIMenuItem
+    UIMenuItem *deleteItem = [[UIMenuItem alloc] initWithTitle:@"Delete" action:@selector(deleteIt:)];
+    menu.menuItems = @[deleteItem];
+    // Tell the menu where it should come from show it
+    CGRect showInRect = CGRectMake(0, 0, 2, 2);
+    [menu setTargetRect:showInRect inView:self.view];
+    [menu setMenuVisible:YES animated:YES];
+}
+
+- (void)hidePopupMenu {
+    UIMenuController *menu = [UIMenuController sharedMenuController];
+    [menu setMenuVisible:NO animated:YES];
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>8F128004-C268-473F-BF40-62F75740DC08</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>UI - MenuController samples</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

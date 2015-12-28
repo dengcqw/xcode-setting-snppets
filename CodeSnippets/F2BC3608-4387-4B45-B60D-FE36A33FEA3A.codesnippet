@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djUIButton</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    UIButton *aButton = [[UIButton alloc] initWithFrame:CGRectMake(&lt;#?#&gt;, &lt;#?#&gt;, &lt;#?#&gt;, &lt;#?#&gt;)];
+    // aButton.titleLabel.font = [UIFont fontWithName:@"iconfont" size:24];
+    [aButton setTitle:@"&lt;#title#&gt;" forState:UIControlStateNormal];
+    [aButton setTitleColor:[UIColor &lt;#color#&gt;] forState:UIControlStateNormal];
+    [aButton setTitleColor:[UIColor &lt;#color#&gt;] forState:UIControlStateSelected];
+    [aButton setTitleColor:[UIColor &lt;#color#&gt;] forState:UIControlStateHighlighted];
+    aButton.backgroundColor = [UIColor clearColor];
+    aButton.showsTouchWhenHighlighted = YES;
+    [aButton addTarget:self action:@selector(&lt;#SEL#&gt;) forControlEvents:UIControlEventTouchUpInside];
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>F2BC3608-4387-4B45-B60D-FE36A33FEA3A</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetPlatformFamily</key>
+	<string>iphoneos</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>UI - Button</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

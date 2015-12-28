@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djFdCheckErrorOfOSStatus</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>// CheckError
+// Function that extracts human-readable information from OSStatus codes. 
+// Credit: "Learning Core Audio: A Hands-on Guide to Audio Programming for Mac and iOS", by Chris Adamson, Kevin Avila
+//
+// Platform: All
+// Language: C
+// Completion Scope: Code Expression, Function or Method
+
+static void CheckError(OSStatus error, const char *operation) {
+    if (error == noErr) {
+      return;
+    }
+    
+    char str[20];
+    *(UInt32 *) (str + 1) = CFSwapInt32HostToBig(error);
+    if (isprint(str[1]) &amp;&amp; isprint(str[2]) &amp;&amp; isprint(str[3]) &amp;&amp; isprint(str[4])) {
+        str[0] = str[5] = '\'';
+        str[6] = '\0';
+    } else {
+        sprintf(str, "%d", (int)error);
+    }
+    
+    fprintf(stderr, "[Error] %s (%s)\n", operation, str);
+    exit(1);
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>A945296E-CDF5-4BE0-A30F-0DC2861DF78D</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Fd - check error of OSStatus</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djFdAssociatedObject</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>// key as void
+static void *kAssociatedKey = &amp;kAssociatedKey;
+
+- (void)setTheObject:(id)theObject {
+    objc_setAssociatedObject(self, kAssociatedKey, theObject, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (id)getTheObject {
+    id theObject = objc_getAssociatedObject(self, kAssociatedKey);
+    return theObject;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>82B7CB4C-61A6-49D3-8FD2-932EC7AADDC0</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Fd - AssociatedObject</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

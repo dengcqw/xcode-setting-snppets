@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djSampleCirleRing</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>/**
+ *  @brief  圆环，有前景色和背景色，通过定时器修改numAdjustedSecondsCompleted产生动画
+    NSUInteger numAdjustedSecondsCompleted; // 时间相对已经完成长度
+    NSUInteger numAdjustedSecondsCompletedIncrementor; // 时间相对增长幅度
+    NSUInteger numAdjustedSecondsTotal; // 时间相对总长
+    NSUInteger numSeconds; // 动画时间
+    circleTimerWidth 圆环宽
+ */
+- (void)drawRect:(CGRect)rect {
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    float radius = CGRectGetWidth(rect)/2.0f - self.circleTimerWidth/2.0f;
+    float angleOffset = M_PI_2;
+
+    // 背景圆环
+    CGContextSetLineWidth(context, self.circleTimerWidth);
+    CGContextBeginPath(context);
+    CGContextAddArc(context,
+                    CGRectGetMidX(rect), CGRectGetMidY(rect),
+                    radius,
+                    0,
+                    2*M_PI,
+                    0);
+    CGContextSetStrokeColorWithColor(context, [self.circleBackgroundColor CGColor]);
+    CGContextStrokePath(context);
+
+    // 前景圆环
+    CGContextSetLineWidth(context, self.circleTimerWidth);
+    CGContextBeginPath(context);
+    CGFloat startAngle = (((CGFloat)numAdjustedSecondsCompleted + 1.0f) /
+                          ((CGFloat)numAdjustedSecondsTotal)*M_PI*2 - angleOffset);
+    CGFloat endAngle = 2*M_PI - angleOffset;
+    CGContextAddArc(context,
+                    CGRectGetMidX(rect), CGRectGetMidY(rect),
+                    radius,
+                    startAngle,
+                    endAngle,
+                    0);
+    CGContextSetStrokeColorWithColor(context, [self.circleColor CGColor]);
+    CGContextStrokePath(context);
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>6F4B4A61-6F39-4B2C-B73B-FE3B0E073C52</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Sample - circle ring with bg and fg color, animation</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djMouseDrag</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>-(void)mouseDown:(NSEvent *)event
+{
+    BOOL loop = YES;
+    
+    NSPoint clickLocation;
+    
+    // convert the initial click location into the view coords
+    clickLocation = [self convertPoint:[event locationInWindow]
+			      fromView:nil];
+    
+    // did the click occur in the draggable item?
+    if ([self isPointInItem:clickLocation]) {
+        // we're dragging, so let's set the cursor
+	// to the closed hand
+	[[NSCursor closedHandCursor] push];
+	
+	NSPoint newDragLocation;
+	
+	// the tight event loop pattern doesn't require the use
+	// of any instance variables, so we'll use a local
+	// variable localLastDragLocation instead.
+	NSPoint localLastDragLocation;
+	
+	// save the starting location as the first relative point
+	localLastDragLocation=clickLocation;
+	
+	while (loop) {
+	    // get the next event that is a mouse-up or mouse-dragged event
+	    NSEvent *localEvent;
+	    localEvent= [[self window] nextEventMatchingMask:NSLeftMouseUpMask | NSLeftMouseDraggedMask];
+	    
+	    
+	    switch ([localEvent type]) {
+		case NSLeftMouseDragged:
+		    
+		    // convert the new drag location into the view coords
+		    newDragLocation = [self convertPoint:[localEvent locationInWindow]
+						fromView:nil];
+		    
+		    
+		    // offset the item and update the display
+		    [self offsetLocationByX:(float)(newDragLocation.x-localLastDragLocation.x)
+				       andY:(float)(newDragLocation.y-localLastDragLocation.y)];
+		    
+		    // update the relative drag location;
+		    localLastDragLocation=newDragLocation;
+		    
+		    // support automatic scrolling during a drag
+		    // by calling NSView's autoscroll: method
+		    [self autoscroll:localEvent];
+		    
+		    break;
+		case NSLeftMouseUp:
+		    // mouse up has been detected, 
+		    // we can exit the loop
+		    loop = NO;
+		    
+		    // finished dragging, restore the cursor
+		    [NSCursor pop];
+		    
+		    // the rectangle has moved, we need to reset our cursor
+		    // rectangle
+		    [[self window] invalidateCursorRectsForView:self];
+		    
+		    break;
+		default:
+		    // Ignore any other kind of event. 
+		    break;
+	    }
+	}
+    };
+    return;
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>95D29781-6C6B-4835-8FCB-C5363B0FC84A</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetPlatformFamily</key>
+	<string>macosx</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>mouse drag example OSX</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

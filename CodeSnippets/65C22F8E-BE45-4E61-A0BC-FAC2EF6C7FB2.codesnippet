@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djRACTimeoutSample</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    RACSignal *signal =
+    [RACSignal createSignal:^RACDisposable *(id &lt;RACSubscriber&gt; subscriber) {
+        
+        RACDisposable *disposable = [RACDisposable new];
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            NSLog(@"Start iterating...");
+            for (int i = 0; i &lt; 200 &amp;&amp; !disposable.isDisposed; i++) {
+                NSLog(@"Send %i to subscriber", i);
+                [subscriber sendNext:@(i)];
+                
+                [NSThread sleepForTimeInterval:0.1];
+            }
+            
+            if (!disposable.isDisposed) {
+                NSLog(@"Send completed to subscriber");
+                [subscriber sendCompleted];
+            }
+        });
+        
+        return disposable;
+    }];
+    
+    NSLog(@"About to subscribe");
+    
+    [[[signal
+       deliverOn:[RACScheduler mainThreadScheduler]]
+      timeout:1.0 onScheduler:[RACScheduler mainThreadScheduler]]
+     subscribeNext:^(id x) {
+         NSLog(@"Got next: %@", x);
+     } error:^(NSError *error) {
+         NSLog(@"Error (timeout): %@", [error localizedDescription]);
+     } completed:^{
+         NSLog(@"Completed");
+     }];
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>65C22F8E-BE45-4E61-A0BC-FAC2EF6C7FB2</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>RAC - timeout GCD sample</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

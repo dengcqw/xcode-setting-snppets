@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djRACChainOperationAsyncSample</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>// synchronous chain of operations sample
+RACScheduler *serializedScheduler = [RACScheduler schedulerWithPriority:RACSchedulerPriorityDefault];
+    [serializedScheduler schedule:^{
+        BOOL success;
+        NSError *error;
+        id finalValue = [[[[service connect] flattenMap:^RACStream *(id value) {
+            return [service doSomething1];
+        }] flattenMap:^RACStream *(id something1Value) {
+            // [service doSomething1], if successful passes along 'somethingValue'
+            return [service disconnect];
+        }] firstOrDefault:defaultValue success:&amp;amp;success error:&amp;amp;error];
+        if (success) {
+            // Operation succeeded!  The last value that was returned via sendNext is stored in finalValue,
+            // success is YES, and error will be nil.
+        }
+        else {
+            // Operation failed!   finalValue will be set to defaultValue, success is NO, and error will be non-nil
+            // if an NSError was propagated up by the chain of operations.
+        }
+    }];
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>5A815961-15DF-4243-90C0-3C440B432950</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>RAC - scheduler async chain operations sample</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

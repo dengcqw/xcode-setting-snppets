@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djRACCommandSample</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (void)commandNextValue:(id)value {
+    NSLog(@"next value:%@",value);
+}
+- (void)commandExecuting:(id)value {
+    NSLog(@"executing value :%@",value);
+}
+- (void)commandError:(id)value {
+    NSLog(@"error value:%@",value);
+}
+- (void)commandSample {
+    // Sample test signal of command
+    RACCommand *cmd = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+        NSError *error = [NSError errorWithDomain:@"error" code:1 userInfo:@{}];
+        return [RACSignal createSignal:^RACDisposable *(id&lt;RACSubscriber&gt; subscriber) {
+            [subscriber sendNext:@1];
+            [subscriber sendCompleted];
+            //[subscriber sendError:error];
+            return nil;
+        }];
+    }];
+    
+    [[cmd.executionSignals flatten] subscribeNext:^(id value) {
+        // return signal next value.
+        NSLog(@"get value from exec signal :%@",value);
+    } completed:^{
+        // return signal completed, command completed too.
+        // not useful, but check return signal completion
+        NSLog(@"exec signal completed");
+    }];
+    
+    [cmd.errors subscribeNext:^(id x) {
+        // when error occour, get it here.
+        NSLog(@"get error from exec signal:%@",x);
+    }];
+    
+    [cmd.executing subscribeNext:^(id x) {
+        // first subscribe get value 0, this is invalid.
+        // when command start, get value 1, this is only value we will get.
+        NSLog(@"executing value is bool:%@",x);
+    }];
+    
+    [self rac_liftSelector:@selector(commandNextValue:) withSignals:[cmd.executionSignals flatten], nil];
+    [self rac_liftSelector:@selector(commandExecuting:) withSignals:cmd.executing, nil];
+    [self rac_liftSelector:@selector(commandError:) withSignals:cmd.errors, nil];
+    
+    [cmd execute:nil];
+}
+
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>79732017-F77E-4A98-9877-0875DE5ED0BE</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>RAC - command sample</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

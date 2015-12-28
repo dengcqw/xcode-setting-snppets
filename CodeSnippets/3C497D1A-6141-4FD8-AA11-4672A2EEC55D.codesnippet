@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djNSFetchResultsController</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>// NSFetchedResultsController
+// Boilerplate for creating an NSFetchedResultsController
+//
+// Platform: iOS
+// Language: Objective-C
+// Completion Scope: Function or Method
+
+NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:&lt;#(NSString *)#&gt;];
+fetchRequest.predicate = [NSPredicate predicateWithFormat:&lt;#(NSString *), ...#&gt;];
+fetchRequest.sortDescriptors = @[&lt;#(NSSortDescriptor *), ...#&gt;];
+
+NSFetchedResultsController *fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:&lt;#(NSFetchRequest *)#&gt; managedObjectContext:&lt;#(NSManagedObjectContext *)#&gt; sectionNameKeyPath:&lt;#(NSString *)#&gt; cacheName:&lt;#(NSString *)#&gt;];
+fetchedResultsController.delegate = &lt;#(id &lt;NSFetchedResultsControllerDelegate&gt;)#&gt;;
+
+NSError *error = nil;
+if (![fetchedResultsController performFetch:&amp;error]) {
+    NSLog(@"Error: %@", error);
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>3C497D1A-6141-4FD8-AA11-4672A2EEC55D</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetPlatformFamily</key>
+	<string>iphoneos</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>NSFetchResultsController-CoreData</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djUIPanGesture</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//    UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panGesture:)];
+//    [self.view addGestureRecognizer:panGesture];
+
+- (void)panGesture:(UIPanGestureRecognizer *)gesture {
+    // x,y轴的位移，如不清零，得到的是总和
+    CGPoint translation = [gesture translationInView:self.view];
+    // x轴和y轴的移动速度(pixels/second)
+    CGPoint velocity = [gesture velocityInView:self.view];
+    NSLog(@"Translation:%@",NSStringFromCGPoint(translation));
+    NSLog(@"Velocity:%@",NSStringFromCGPoint(velocity));
+    
+    &lt;#code here#&gt;
+    // 清零后，每次读取到的是两次调用此方法的差值
+    [gesture setTranslation:CGPointZero inView:self.view];
+}
+#pragma mark UIGestureRecognizerDelegate Methods
+
+// 控制活动方法和速度
+// 下面只允许pan的水平滑动
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
+{
+    if([gestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]]) {
+        //  We only want to register vertial pans
+        UIPanGestureRecognizer *panGestureRecognizer = (UIPanGestureRecognizer *)gestureRecognizer;
+        CGPoint velocity = [panGestureRecognizer velocityInView:self.container];
+        return fabsf(velocity.y) &gt; fabsf(velocity.x);
+    }
+    return YES;
+}
+
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+{
+    return YES;
+}
+
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>F4BC877A-3170-45B5-9DE3-0CA8059C7DCE</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>UI - pan gesture </string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

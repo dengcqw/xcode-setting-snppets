@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djBlockCommonDefine</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>// common block define
+typedef void (^xxBlockCompletion)();
+typedef void (^xxBlockBooleanResult)(BOOL succeeded, NSError *error);
+typedef void (^xxBlockIntegerResult)(NSInteger number, NSError *error);
+typedef void (^xxBlockArrayResult)(NSArray *objects, NSError *error);
+typedef void (^xxBlockObjectResult)(id object, NSError *error);
+typedef void (^xxBlockDataResult)(NSData *data, NSError *error);
+typedef void (^xxBlockStringResult)(NSString *string, NSError *error);
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>0EF80FBB-A8B9-4282-8028-7C8ACF4FE7DF</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C-Plus-Plus</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Block - commom bock define</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (void)doRate{
+  NSString *urlString = @"http://appstore.com/vinylogue-for-last.fm";
+  
+  if (NSStringFromClass([SKStoreProductViewController class]) != nil) {
+    SKStoreProductViewController *storeVC = [[SKStoreProductViewController alloc] init];
+    NSNumber *appId = [NSNumber numberWithInteger:617471119];
+    [storeVC loadProductWithParameters:@{SKStoreProductParameterITunesItemIdentifier:appId} completionBlock:nil];
+    [self presentViewController:storeVC animated:YES completion:NULL];
+    storeVC.delegate = self;
+  }else if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:urlString]]){
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlString]];
+  }else{
+    DLog(@"Error opening url");
+  }
+}
+
+- (void)productViewControllerDidFinish:(SKStoreProductViewController *)viewController{
+  [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>D30AE0CE-CBFB-4B7B-9531-E8AFE91C1337</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Sample - rate app store</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

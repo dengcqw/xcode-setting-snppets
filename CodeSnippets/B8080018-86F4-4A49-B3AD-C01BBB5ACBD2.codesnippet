@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djFdVector</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#pragma mark - Maths
+
+static inline CGFloat radians (CGFloat degrees) {return degrees * M_PI / 180.0;}
+
+/**
+ *  Calculate distination point with distance, angle, origin.
+ *
+ *  @param radius   distance between origin and distination point
+ *  @param bearing  vector angle in degree
+ *  @param origin   origin point
+ *
+ *  @return distination point
+ */
+-(CGPoint)toCartesian:(CGFloat)radius bearing:(CGFloat)bearing origin:(CGPoint)origin {
+    CGFloat bearingInRadians = radians( bearing );
+    
+    CGPoint vector = CGPointMake( radius * sinf( bearingInRadians ), -radius * cosf( bearingInRadians ));
+    
+    return CGPointMake( origin.x + vector.x, origin.y + vector.y );
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>B8080018-86F4-4A49-B3AD-C01BBB5ACBD2</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Fd calc vector and point</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

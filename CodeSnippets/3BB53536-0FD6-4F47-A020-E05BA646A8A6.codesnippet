@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djRACCommandExec</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    [[[[command.executing
+        ignore:@NO]
+       doNext:^(id _) {
+           // The command is currently executing.
+           // Display progress indicator.
+       }]
+      takeUntil:[command.executing ignore:@YES]]
+     subscribeCompleted:^{
+         // The command has finished executing.
+         // Remove progress indicator (if shown) and do something with the command's data.
+     }];
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>3BB53536-0FD6-4F47-A020-E05BA646A8A6</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>RAC - command executing</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djFdObjectEqual</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>// 比较两个同类型object方法
+-(BOOL)isEqual:(id)object {
+    return [[NSKeyedArchiver archivedDataWithRootObject:self] isEqualToData:[NSKeyedArchiver archivedDataWithRootObject:object]];
+}
+
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>F6133A10-4C18-4108-BD81-2A05E0E3462C</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>比较两个同类型object方法</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Fd - is object equal</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

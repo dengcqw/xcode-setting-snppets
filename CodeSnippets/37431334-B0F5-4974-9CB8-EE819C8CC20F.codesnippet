@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djCaImageLayer</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>UIImage *image = [UIImage imageNamed:@"&lt;#image#&gt;"];
+CALayer *alayer = [CALayer layer];
+alayer.bounds = CGRectMake(0, 0, image.size.width, image.size.height);
+alayer.position = CGPointMake(160, 200); // UIscreen center
+alayer.anchorPoint = CGPointMake(0, 0);
+//alayer.contents = (id)[UIImage imageNamed:@"&lt;#image#&gt;"].CGImage;
+alayer.contents = (id)image.CGImage;
+[self.view.layer addSublayer:alayer];
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>37431334-B0F5-4974-9CB8-EE819C8CC20F</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Ca - image layer</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

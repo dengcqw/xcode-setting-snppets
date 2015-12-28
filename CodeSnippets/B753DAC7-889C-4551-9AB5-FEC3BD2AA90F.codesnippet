@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djTrickGetViewControllerFromSubView</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>-(UIViewController *)cellSuperViewController
+{
+    id responder = self;
+    while (responder){
+        if ([responder isKindOfClass:[UIViewController class]]){
+            return responder;
+        }
+        responder = [responder nextResponder];
+    }
+    return nil;
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>B753DAC7-889C-4551-9AB5-FEC3BD2AA90F</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>trick - get view controller from subview</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
