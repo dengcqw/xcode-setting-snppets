@@ -2,20 +2,27 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>djCommentVariable</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>All</string>
+		<string>CodeBlock</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>/**&lt; &lt;#?#&gt; */</string>
+	<string>    context[@"callback"] = ^{
+        // JSValue *object = [JSValue valueWithNewObjectInContext:context]; this is error invoking
+        // retrieve the callback's context
+        // outside callback will be nil
+        JSValue *object = [JSValue valueWithNewObjectInContext:[JSContext currentContext]];
+        object[@"x"] = @2;
+        object[@"y"] = @3;
+        return object;
+    };  
+</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>F6257AF6-3061-4E50-AF8E-298FDC6AFB6F</string>
+	<string>636C8FAC-7423-4173-AFD5-673EA643B795</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Comment Variable</string>
+	<string>JS - callback block</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

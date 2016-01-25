@@ -3,19 +3,19 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>www</string>
+	<string>djBlockParam</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>@property (nonatomic, weak) &lt;#type#&gt; * &lt;#name#&gt;;</string>
+	<string>(&lt;#returnType#&gt; (^)(&lt;#Class *#&gt; &lt;#variable#&gt;))&lt;#blockName#&gt;</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>E10BEAE2-7433-4892-9314-95759F276395</string>
+	<string>2B1845F4-B035-4215-838C-82FA3FE93864</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Property -  weak</string>
+	<string>Block - block as param</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

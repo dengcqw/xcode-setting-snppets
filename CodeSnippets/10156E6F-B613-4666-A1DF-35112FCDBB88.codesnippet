@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>@protocol UIButtonExport &lt;JSExport&gt;  
+- (void)setTitle:(NSString *)title forState:(UIControlState)state;  
+@end  
+
+- (void)test  { 
+    // add protocol to UIButton runtime
+    class_addProtocol([UIButton class],@protocol(UIButtonExport));  
+    
+    UIButton *button = [UIButtonbuttonWithType:UIButtonTypeSystem];  
+    [button setTitle:@"Hello Objective-C"forState:UIControlStateNormal];  
+    button.frame = CGRectMake(20,40,280,40);  
+    
+    JSContext *context = [[JSContext alloc] init];  
+    context[@"button"] = button; 
+    [context evaluateScript:@"button.setTitleForState('Hello JavaScript', 0)"];  
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>10156E6F-B613-4666-A1DF-35112FCDBB88</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>JS - Export protocol sample</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

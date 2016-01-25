@@ -21,7 +21,7 @@ typedef void (^xxBlockStringResult)(NSString *string, NSError *error);
 	<key>IDECodeSnippetIdentifier</key>
 	<string>0EF80FBB-A8B9-4282-8028-7C8ACF4FE7DF</string>
 	<key>IDECodeSnippetLanguage</key>
-	<string>Xcode.SourceCodeLanguage.Objective-C-Plus-Plus</string>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetTitle</key>
 	<string>Block - commom bock define</string>
 	<key>IDECodeSnippetUserSnippet</key>

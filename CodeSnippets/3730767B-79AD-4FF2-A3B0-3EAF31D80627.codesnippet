@@ -2,20 +2,19 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>www</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>@property (nonatomic, weak) &lt;#type#&gt; * &lt;#name#&gt;;</string>
+	<string>/**&lt; &lt;#?#&gt; */
+///&lt; &lt;#?#&gt;</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>E10BEAE2-7433-4892-9314-95759F276395</string>
+	<string>3730767B-79AD-4FF2-A3B0-3EAF31D80627</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Property -  weak</string>
+	<string>Comment variable</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

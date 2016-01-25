@@ -9,8 +9,7 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>
-#pragma mark - Initialization &amp; Deinitialization
+	<string>#pragma mark - Init
 
 - (void)dealloc {
 }
@@ -23,45 +22,28 @@
     return self;
 }
 
-#pragma mark - Setter and Getter
-
 #pragma mark - View lifecycle
 
 - (void)loadView {
     [super loadView];
-    // Create view here
+    // add subview here
+}
+
+- (void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    // Init data and view here
-    [self initData];
-    [self initUserInterface];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+#pragma mark - Delegate &amp;&amp; datasource
 
-#pragma mark - Initialization of view
+#pragma mark - Event response
 
-- (void)initUserInterface {
-    
-}
+//#pragma mark - Private methods
 
-#pragma mark - Initialization of data
-
-- (void)initData {
-    
-}
-
-#pragma mark - delegate
-#pragma mark - data source
-#pragma mark - Action
-
-#pragma mark - Others
+#pragma mark - Setter and Getter
 
 </string>
 	<key>IDECodeSnippetIdentifier</key>

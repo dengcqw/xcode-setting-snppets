@@ -36,7 +36,9 @@
                                 method_getImplementation(originalMethod),
                                 method_getTypeEncoding(originalMethod));
         } else {
-            // 如果是Class Method，直接调用下面方法
+            // 如果是Class Method，直接
+//        调用下面方法
+//            class_getClassMethod
             method_exchangeImplementations(originalMethod, swizzledMethod);
         }
     });

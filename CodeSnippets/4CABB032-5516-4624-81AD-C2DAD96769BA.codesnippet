@@ -3,19 +3,19 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>www</string>
+	<string>djDeprecated</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>@property (nonatomic, weak) &lt;#type#&gt; * &lt;#name#&gt;;</string>
+	<string>__attribute__((deprecated("&lt;#desc#&gt;")))</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>E10BEAE2-7433-4892-9314-95759F276395</string>
+	<string>4CABB032-5516-4624-81AD-C2DAD96769BA</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Property -  weak</string>
+	<string>deprecated  attribute</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

@@ -2,20 +2,18 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>rrr</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>@property (retain, nonatomic) &lt;#type#&gt; *&lt;#name#&gt;;</string>
+	<string>__attribute__((deprecated))</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>9E1BDFE8-98A7-42F0-8A9C-05EBDE1FDDE8</string>
+	<string>D3BE645E-A18D-4E28-B64D-2E30C42B809A</string>
 	<key>IDECodeSnippetLanguage</key>
-	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<string>Xcode.SourceCodeLanguage.Objective-C-Plus-Plus</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Property  retain - rrr</string>
+	<string>clang</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

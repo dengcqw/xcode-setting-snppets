@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//http://blog.csdn.net/lizhongfu2013/article/details/9236357
+JS:All references are strong
+function ClickHandler(button, callback) {
+    this.button = button;
+    this.button.onClickHandler = this;
+    this.handleEvent = callback;
+};
+
+OC:
+@implementation MyButton
+- (void)setOnClickHandler:(JSValue *)handler
+{
+    //_onClickHandler = handler; this will cause Retain cycle, use below
+    _onClickHandler = [JSManagedValue managedValueWithValue:handler];
+    [_context.virtualMachine addManagedReference:_onClickHandler
+                                       withOwner:self]
+}
+@end
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>69CB0D0C-A5CC-4744-9012-4462AF20CCC3</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>JS - memory management sample</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
