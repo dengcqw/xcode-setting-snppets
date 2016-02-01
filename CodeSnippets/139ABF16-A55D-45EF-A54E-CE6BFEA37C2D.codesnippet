@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>static NSThread *&lt;#name#&gt;Thread;
+
++ (void)start&lt;#name#&gt;ThreadIfNeeded {
+	static dispatch_once_t predicate;
+	dispatch_once(&amp;predicate, ^{
+		
+		NSLog(@"%s: Starting &lt;#name#&gt; thread...", __FILE__);
+		
+		&lt;#name#&gt;Thread = [[NSThread alloc] initWithTarget:self
+		                                        selector:@selector(&lt;#name#&gt;Thread)
+		                                          object:nil];
+		[&lt;#name#&gt;Thread start];
+	});
+}
+
++ (void&lt;#name#&gt;Thread {
+	@autoreleasepool {
+	
+		NSLog(@"%s: &lt;#name#&gt; Thread: Started", __FILE__);
+		
+		// We can't run the run loop unless it has an associated input source or a timer.
+		// So we'll just create a timer that will never fire - unless the server runs for 10,000 years.
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
+		[NSTimer scheduledTimerWithTimeInterval:[[NSDate distantFuture] timeIntervalSinceNow]
+		                                 target:self
+		                               selector:@selector(donothingatall:)
+		                               userInfo:nil
+		                                repeats:YES];
+#pragma clang diagnostic pop
+
+		[[NSRunLoop currentRunLoop] run];
+		
+		NSLog(@"%@: &lt;#name#&gt; Thread: Aborted", __FILE__);
+	}
+}
+
++ (void)executeBlock:(dispatch_block_t)block {
+    NSAssert([NSThread currentThread] == &lt;#name#&gt;Thread, @"Executed on incorrect thread");
+	
+	block();
+}
+
++ (void)performBlock:(dispatch_block_t)block {
+	[self performSelector:@selector(executeBlock:)
+                 onThread:&lt;#name#&gt;Thread
+	           withObject:block
+	        waitUntilDone:YES];
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>139ABF16-A55D-45EF-A54E-CE6BFEA37C2D</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>vim snip</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Sample - create NSThread</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
