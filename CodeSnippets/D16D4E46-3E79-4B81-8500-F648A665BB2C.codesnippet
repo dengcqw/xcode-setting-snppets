@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeExpression</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>let textField = UITextField(frame: CGRectZero)
+textField.placeholder = "&lt;#placeholder#&gt;"
+textField.font = UIFont.systemFontOfSize(15)
+textField.borderStyle = UITextBorderStyle.RoundedRect
+textField.textAlignment = NSTextAlignment.Left
+textField.delegate = self
+
+textField.autocorrectionType = UITextAutocorrectionType.No
+textField.keyboardType = UIKeyboardType.Default
+textField.returnKeyType = UIReturnKeyType.Done
+textField.clearButtonMode = UITextFieldViewMode.WhileEditing;
+textField.contentVerticalAlignment = UIControlContentVerticalAlignment.Center</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>D16D4E46-3E79-4B81-8500-F648A665BB2C</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift - TextField config</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>// 延迟加载4种方法
+class LazySample: NSObject {
+    // 1. 直接初始化
+//    lazy var players = [String]()
+    
+    // 2. 内嵌函数
+    lazy var players: [String] = {         
+        var tmp = [String]()
+        tmp.append("John Doe")
+        return tmp
+    }()
+    
+    // 3. 通过实例方法初始化
+//    lazy var players: [String] = self.initialPlayers()
+//    
+//    func initialPlayers() -&gt; [String] {
+//        var tmp = [String]()
+//        tmp.append("John Doe")
+//        return tmp
+//    }
+    
+    // 4. 通过类方法初始化
+//    lazy var players = LazySample.initialPlayers()
+//    class func initialPlayers() -&gt; [String] {         
+//        var tmp = [String]()
+//        tmp.append("John Doe")
+//        return tmp
+//    }
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>7AE9EC3F-921A-477B-8736-B0EE470CB9F3</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetPlatformFamily</key>
+	<string>iphoneos</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift - lazy load sample</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

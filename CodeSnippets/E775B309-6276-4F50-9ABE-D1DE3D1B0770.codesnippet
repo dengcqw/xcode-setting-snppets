@@ -9,11 +9,24 @@
 		<string>CodeBlock</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>let alert = UIAlertController(title: "test", message: "", preferredStyle: .Alert)
-        alert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (action) -&gt; Void in
+	<string>        let alert = UIAlertController(title: "Enter Name", message: nil, preferredStyle: .Alert)
+
+        alert.addTextFieldWithConfigurationHandler({ (textField) -&gt; Void in
+            textField.text = ""
+            textField.autocapitalizationType = .Sentences;
+        })
+
+        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) -&gt; Void in
+            let textField = alert.textFields![0] as UITextField
+            print(textField.text!)
+        }))
+
+        alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: {
+            (alertAction: UIAlertAction!) in
             alert.dismissViewControllerAnimated(true, completion: nil)
         }))
-        presentViewController(alert, animated: true, completion: nil)</string>
+
+        self.presentViewController(alert, animated: true, completion: nil)</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>E775B309-6276-4F50-9ABE-D1DE3D1B0770</string>
 	<key>IDECodeSnippetLanguage</key>
