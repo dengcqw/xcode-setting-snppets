@@ -3,25 +3,22 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>masMake</string>
+	<string>masEdges</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>CodeBlock</string>
+		<string>CodeExpression</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>[&lt;#view#&gt; mas_makeConstraints:^(MASConstraintMaker *make){
-    &lt;#code#&gt;
-}];
-</string>
+	<string>make.edges.equalTo(superview).with.insets(&lt;#?#&gt;);</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>4A0A057B-8C17-43BB-BDBA-3A315A942EF8</string>
+	<string>788DBEA3-5151-483C-9A4F-4403C0231EAB</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>mas - Make</string>
+	<string>mas - edges</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>

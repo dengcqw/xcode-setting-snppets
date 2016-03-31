@@ -3,25 +3,25 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>masMake</string>
+	<string>viewWillDisappear</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>CodeBlock</string>
+		<string>ClassImplementation</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>[&lt;#view#&gt; mas_makeConstraints:^(MASConstraintMaker *make){
+	<string>override func viewWillDisappear(animated: Bool) {
+    super.viewWillDisappear(animated)
     &lt;#code#&gt;
-}];
-</string>
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>4A0A057B-8C17-43BB-BDBA-3A315A942EF8</string>
+	<string>62D2004B-BF69-41F1-99FF-9ABA7030CA1B</string>
 	<key>IDECodeSnippetLanguage</key>
-	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>mas - Make</string>
+	<string>Swift - viewWillDisappear</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>

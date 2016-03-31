@@ -3,25 +3,24 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>masMake</string>
+	<string>method0_0</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>CodeBlock</string>
+		<string>ClassImplementation</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>[&lt;#view#&gt; mas_makeConstraints:^(MASConstraintMaker *make){
+	<string>private func &lt;#method0_0#&gt;() -&gt; Void {
     &lt;#code#&gt;
-}];
-</string>
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>4A0A057B-8C17-43BB-BDBA-3A315A942EF8</string>
+	<string>BFBBFAA7-B84A-49EA-AD2A-97341B78C61A</string>
 	<key>IDECodeSnippetLanguage</key>
-	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>mas - Make</string>
+	<string>Swift - method no input no output</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>
