@@ -20,16 +20,22 @@ var currentHealth:Int = 100
 var currentLevel:Double = 31.5
 
 ## Array
-var food:[String] = ["French Fries", "Pizza", "Pasta"]
+var foods:[String] = ["French Fries", "Pizza", "Pasta"]
 
     ### Append Value
-    food.append("Ice Cream")
+    foods.append("Ice Cream")
 
     ### Prepend Value
-    food.insert("Ice Cream", atIndex: 0)
+    foods.insert("Ice Cream", atIndex: 0)
 
     ### Deleting by Index
-    food.removeAtIndex(1)
+    foods.removeAtIndex(1)
+    
+    for  afood in foods {
+    }
+
+    for (index, afood) in foods.enumerate() {
+    }
 
 ## Dictionary
 var programmingSkillLevels:[String: Int] = ["JavaScript": 11, "HTML": 10, "CSS": 10, "Swift": 1]

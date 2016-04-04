@@ -3,22 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>viewWillAppear</string>
+	<string>djVariableGetSet</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>ClassImplementation</string>
+		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>override func viewWillAppear(animated: Bool) {
-    super.viewWillAppear(animated)
-    &lt;#code#&gt;
+	<string>var &lt;#variable#&gt;: &lt;#Type#&gt; {    get {        return &lt;#?#&gt;    }    set {
+        &lt;#newValue#&gt;    }
 }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>1F9C2030-0262-4B54-81BB-67FA0D47DE9B</string>
+	<string>40538D74-D282-4EEC-9258-6D76455D8189</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Swift - viewWillAppear</string>
+	<string>Swift - variable get set</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

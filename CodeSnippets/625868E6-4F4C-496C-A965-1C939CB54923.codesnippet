@@ -3,22 +3,20 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>viewWillAppear</string>
+	<string>djEnum</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>ClassImplementation</string>
+		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>override func viewWillAppear(animated: Bool) {
-    super.viewWillAppear(animated)
-    &lt;#code#&gt;
+	<string>enum &lt;#TypeName#&gt; : &lt;#Int#&gt; {    case &lt;#subType#&gt;
 }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>1F9C2030-0262-4B54-81BB-67FA0D47DE9B</string>
+	<string>625868E6-4F4C-496C-A965-1C939CB54923</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Swift - viewWillAppear</string>
+	<string>Swift - enum  single type</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

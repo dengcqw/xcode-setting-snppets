@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>swift-closureoptionaltypealias</string>
+	<string>djTypealiasOptionalClosure</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>ClassImplementation</string>
@@ -17,7 +17,7 @@
 	<key>IDECodeSnippetSummary</key>
 	<string>Optional closure typealiast with arguments and return value snippet for Swift</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Swift optional closure typealias</string>
+	<string>Swift - optional closure typealias</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
