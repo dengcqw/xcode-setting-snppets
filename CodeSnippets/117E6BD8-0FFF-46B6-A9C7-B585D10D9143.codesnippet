@@ -3,22 +3,19 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>viewWillAppear</string>
+	<string>addSubview</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>ClassImplementation</string>
+		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>override func viewWillAppear(animated: Bool) {
-    super.viewWillAppear(animated)
-    &lt;#code#&gt;
-}</string>
+	<string>[self.view addSubview:self.&lt;#?#&gt;];</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>1F9C2030-0262-4B54-81BB-67FA0D47DE9B</string>
+	<string>117E6BD8-0FFF-46B6-A9C7-B585D10D9143</string>
 	<key>IDECodeSnippetLanguage</key>
-	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Swift - viewWillAppear</string>
+	<string>UI - add subview</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
