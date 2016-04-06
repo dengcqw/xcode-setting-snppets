@@ -3,20 +3,20 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>djMethodClass</string>
+	<string>djEnumComplexType</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>class func method(input:String) {
-}</string>
+	<string>enum BarCode {    case UPCA(Int, Int, Int, Int)    case QRCode(String)}
+</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>ED03C92A-1DE1-425F-9754-72C247B1DF4F</string>
+	<string>A9628A63-8017-4525-BB10-2DE7EACA1388</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Swift - dj class method</string>
+	<string>Swfit - enum complex type</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

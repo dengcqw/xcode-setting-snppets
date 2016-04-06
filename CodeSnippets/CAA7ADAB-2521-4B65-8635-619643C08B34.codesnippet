@@ -3,20 +3,24 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>djMethodClass</string>
+	<string>djVariableObserve</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>class func method(input:String) {
-}</string>
+	<string>var &lt;#variable#&gt;: Int = 0 {    willSet {
+        &lt;#newValue#&gt;    }    didSet {
+        &lt;#oldValue#&gt;
+    }}</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>ED03C92A-1DE1-425F-9754-72C247B1DF4F</string>
+	<string>CAA7ADAB-2521-4B65-8635-619643C08B34</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>willSet didSet</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Swift - dj class method</string>
+	<string>Swift - variable observe</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djStringSample</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>// 字母下标
+let greeting = "Guten Tag!"greeting[greeting.startIndex] // first char: G
+greeting[greeting.startIndex.successor()] // second char: ugreeting[greeting.endIndex.predecessor()] // last char: !let index = greeting.startIndex.advancedBy(7) // 7th chargreeting[index] // a
+
+// 遍历字母
+for index in greeting.characters.indices {    print("\(greeting[index]) ", terminator: " ")}
+for character in greeting.characters {    print(character)}
+
+// 插入
+var welcome = "hello"welcome.insert("!", atIndex: welcome.endIndex) // "hello!"
+welcome.insertContentsOf(" there".characters, at: welcome.endIndex.predecessor()) // "hello there!"
+
+// 删除
+welcome.removeAtIndex(welcome.endIndex.predecessor()) // "hello there"
+let range = welcome.endIndex.advancedBy(-6)..&lt;welcome.endIndex
+welcome.removeRange(range) // "hello"</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>4ADCC983-E596-42B0-A42B-735283E933AF</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift - String sample</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

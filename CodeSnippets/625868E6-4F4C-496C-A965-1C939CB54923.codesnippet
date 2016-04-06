@@ -3,20 +3,20 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>djMethodClass</string>
+	<string>djEnum</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>class func method(input:String) {
+	<string>enum &lt;#TypeName#&gt; : &lt;#Int#&gt; {    case &lt;#subType#&gt;
 }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>ED03C92A-1DE1-425F-9754-72C247B1DF4F</string>
+	<string>625868E6-4F4C-496C-A965-1C939CB54923</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Swift - dj class method</string>
+	<string>Swift - enum  single type</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

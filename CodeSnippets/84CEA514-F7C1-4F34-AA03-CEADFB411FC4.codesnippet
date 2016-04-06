@@ -3,20 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>djMethodClass</string>
+	<string>djExtensionDescription</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>class func method(input:String) {
+	<string>extension &lt;#TypeName#&gt;: CustomStringConvertible {
+    var description: String {
+        return "\(rawValue)"
+    }
 }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>ED03C92A-1DE1-425F-9754-72C247B1DF4F</string>
+	<string>84CEA514-F7C1-4F34-AA03-CEADFB411FC4</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Swift - dj class method</string>
+	<string>Swift - extension description</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
