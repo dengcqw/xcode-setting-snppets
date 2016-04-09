@@ -7,7 +7,8 @@
 		<string>CodeExpression</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>// For Loop
+	<string>
+// For Loop
 
 let values = [1, 2, 3, 4, 5]
 for value in values {
@@ -26,7 +27,8 @@ var i = 0
 while i &lt; values.count {
     print(values[i])
     i++
-}</string>
+}
+</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>127AD172-2902-42E0-9ACB-75080A6333AE</string>
 	<key>IDECodeSnippetLanguage</key>

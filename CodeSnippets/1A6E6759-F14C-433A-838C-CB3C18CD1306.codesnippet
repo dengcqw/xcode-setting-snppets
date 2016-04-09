@@ -9,7 +9,8 @@
 		<string>CodeBlock</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>    NSString *moviePath = [[NSBundle mainBundle] pathForResource:@"mov_bbb" ofType:@"mp4"];
+	<string>    
+	NSString *moviePath = [[NSBundle mainBundle] pathForResource:@"mov_bbb" ofType:@"mp4"];
     NSURL *movieURL = [NSURL fileURLWithPath:moviePath];
 
     AVPlayer *player = [AVPlayer playerWithURL:movieURL];

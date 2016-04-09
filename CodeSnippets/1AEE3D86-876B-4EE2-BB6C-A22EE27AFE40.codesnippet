@@ -7,13 +7,15 @@
 		<string>CodeExpression</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), { [weak self] () -&gt; Void in
+	<string>
+dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), { [weak self] () -&gt; Void in
     &lt;#code#&gt;
     
     dispatch_async(dispatch_get_main_queue(), { () -&gt; Void in
         &lt;#code#&gt;
     })
-})</string>
+})
+</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>1AEE3D86-876B-4EE2-BB6C-A22EE27AFE40</string>
 	<key>IDECodeSnippetLanguage</key>

@@ -12,7 +12,8 @@
 	<string>
 [[NSNotificationCenter defaultCenter] removeObserver:self.&lt;#observer property#&gt; 
                                                 name:&lt;#notification name#&gt; 
-                                                  object:nil];</string>
+                                                  object:nil];
+</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>121D9BAB-12C3-4AC6-BEFF-5A753532251A</string>
 	<key>IDECodeSnippetLanguage</key>

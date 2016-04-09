@@ -9,7 +9,8 @@
 		<string>CodeBlock</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>    NSString *infoPlistPath = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"/Contents/Info.plist"];
+	<string>    
+	NSString *infoPlistPath = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"/Contents/Info.plist"];
     NSDictionary *plistInfoDic = [NSDictionary dictionaryWithContentsOfFile:infoPlistPath];
     NSString *&lt;#keyValue#&gt; = [plistInfoDic valueForKey:@"&lt;#key#&gt;"];
 </string>

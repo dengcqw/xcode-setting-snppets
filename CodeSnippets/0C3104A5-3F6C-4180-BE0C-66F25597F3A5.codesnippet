@@ -9,7 +9,10 @@
 		<string>CodeBlock</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>UIImage* image = [UIImage imageNamed:@"&lt;#Your Image#&gt;"];CGImageRef imageRef = image.CGImage;</string>
+	<string>
+UIImage* image = [UIImage imageNamed:@"&lt;#Your Image#&gt;"];
+CGImageRef imageRef = image.CGImage;
+</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>0C3104A5-3F6C-4180-BE0C-66F25597F3A5</string>
 	<key>IDECodeSnippetLanguage</key>

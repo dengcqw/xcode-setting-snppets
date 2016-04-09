@@ -9,8 +9,10 @@
 		<string>CodeBlock</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>NSDictionary *userInfo = @{NSLocalizedDescriptionKey : @"&lt;#error description#&gt;"};
-NSError *error = [NSError errorWithDomain:@"&lt;#domain#&gt;" code:&lt;#errorcode#&gt; userInfo:userInfo];</string>
+	<string>
+NSDictionary *userInfo = @{NSLocalizedDescriptionKey : @"&lt;#error description#&gt;"};
+NSError *error = [NSError errorWithDomain:@"&lt;#domain#&gt;" code:&lt;#errorcode#&gt; userInfo:userInfo];
+</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>2BEFBCF2-40F5-4679-A1A7-850EC9942B3E</string>
 	<key>IDECodeSnippetLanguage</key>

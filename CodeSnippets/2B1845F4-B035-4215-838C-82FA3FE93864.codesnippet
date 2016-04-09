@@ -9,7 +9,9 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>(&lt;#returnType#&gt; (^)(&lt;#Class *#&gt; &lt;#variable#&gt;))&lt;#blockName#&gt;</string>
+	<string>
+		(&lt;#returnType#&gt; (^)(&lt;#Class *#&gt; &lt;#variable#&gt;))&lt;#blockName#&gt;
+	</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>2B1845F4-B035-4215-838C-82FA3FE93864</string>
 	<key>IDECodeSnippetLanguage</key>

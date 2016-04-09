@@ -9,7 +9,8 @@
 		<string>CodeBlock</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>UIImage *image = [UIImage imageNamed:@"&lt;#image#&gt;"];
+	<string>
+UIImage *image = [UIImage imageNamed:@"&lt;#image#&gt;"];
 CALayer *alayer = [CALayer layer];
 alayer.bounds = CGRectMake(0, 0, image.size.width, image.size.height);
 alayer.position = CGPointMake(160, 200); // UIscreen center

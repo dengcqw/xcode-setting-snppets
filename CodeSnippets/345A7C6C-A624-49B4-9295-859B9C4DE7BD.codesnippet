@@ -9,7 +9,8 @@
 		<string>CodeBlock</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>static NSDataFormatter *formatter = nil;
+	<string>
+static NSDataFormatter *formatter = nil;
 if (!formatter) {
     formatter = [[NSDateFormatter alloc] init];
 }

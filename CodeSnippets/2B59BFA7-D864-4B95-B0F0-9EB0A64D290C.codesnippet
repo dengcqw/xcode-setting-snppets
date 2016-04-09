@@ -9,8 +9,10 @@
 		<string>CodeExpression</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>    NSStringEncoding enc = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
-    NSString *retStr = [[NSString alloc] initWithData:data encoding:enc];</string>
+	<string>    
+NSStringEncoding enc = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
+NSString *retStr = [[NSString alloc] initWithData:data encoding:enc];
+</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>2B59BFA7-D864-4B95-B0F0-9EB0A64D290C</string>
 	<key>IDECodeSnippetLanguage</key>

@@ -9,7 +9,8 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>// common block define
+	<string>
+// common block define
 typedef void (^xxBlockCompletion)();
 typedef void (^xxBlockBooleanResult)(BOOL succeeded, NSError *error);
 typedef void (^xxBlockIntegerResult)(NSInteger number, NSError *error);

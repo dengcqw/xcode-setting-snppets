@@ -9,7 +9,8 @@
 		<string>CodeBlock</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>// NSFetchedResultsController
+	<string>
+// NSFetchedResultsController
 // Boilerplate for creating an NSFetchedResultsController
 //
 // Platform: iOS

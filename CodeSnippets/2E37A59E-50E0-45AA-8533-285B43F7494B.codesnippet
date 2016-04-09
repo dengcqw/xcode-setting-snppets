@@ -9,7 +9,8 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>- (UICollectionView *)collectionView {
+	<string>
+	- (UICollectionView *)collectionView {
     if (nil == _collectionView) {
         
         // flow layout 要继承重写
@@ -26,7 +27,6 @@
     }
     return _collectionView;
 }
-
 </string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>2E37A59E-50E0-45AA-8533-285B43F7494B</string>

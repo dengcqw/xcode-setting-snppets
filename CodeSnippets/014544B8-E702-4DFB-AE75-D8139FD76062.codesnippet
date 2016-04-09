@@ -2,30 +2,31 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>djCATransaction</string>
-	<key>IDECodeSnippetCompletionScopes</key>
-	<array>
-		<string>CodeBlock</string>
-	</array>
-	<key>IDECodeSnippetContents</key>
-	<string>    //By default, there is an implicit transaction block that automatically catches the calls to CATransaction.
-    //Using CATransaction begin/commit creates an explicit transaction block that allows you to apply different animation characteristics to different elements of an animation.
-    // begin/commit 显示创建事务块，系统存在一个隐式事务块
-    [CATransaction begin];
-    [CATransaction setDisableActions:YES];
-    self.view.layer.borderWidth = 1.0; // no animation
-    [CATransaction commit];
+    <key>IDECodeSnippetCompletionPrefix</key>
+    <string>djCATransaction</string>
+    <key>IDECodeSnippetCompletionScopes</key>
+    <array>
+        <string>CodeBlock</string>
+    </array>
+    <key>IDECodeSnippetContents</key>
+    <string>
+//By default, there is an implicit transaction block that automatically catches the calls to CATransaction.
+//Using CATransaction begin/commit creates an explicit transaction block that allows you to apply different animation characteristics to different elements of an animation.
+// begin/commit 显示创建事务块，系统存在一个隐式事务块
+[CATransaction begin];
+[CATransaction setDisableActions:YES];
+self.view.layer.borderWidth = 1.0; // no animation
+[CATransaction commit];
 </string>
-	<key>IDECodeSnippetIdentifier</key>
-	<string>014544B8-E702-4DFB-AE75-D8139FD76062</string>
-	<key>IDECodeSnippetLanguage</key>
-	<string>Xcode.SourceCodeLanguage.Objective-C</string>
-	<key>IDECodeSnippetTitle</key>
-	<string>Ca - CATransaction</string>
-	<key>IDECodeSnippetUserSnippet</key>
-	<true/>
-	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+    <key>IDECodeSnippetIdentifier</key>
+    <string>014544B8-E702-4DFB-AE75-D8139FD76062</string>
+    <key>IDECodeSnippetLanguage</key>
+    <string>Xcode.SourceCodeLanguage.Objective-C</string>
+    <key>IDECodeSnippetTitle</key>
+    <string>Ca - CATransaction</string>
+    <key>IDECodeSnippetUserSnippet</key>
+    <true/>
+    <key>IDECodeSnippetVersion</key>
+    <integer>2</integer>
 </dict>
 </plist>

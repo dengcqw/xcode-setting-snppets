@@ -9,7 +9,8 @@
 		<string>CodeExpression</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>    NSFileManager *manager = [NSFileManager defaultManager];
+	<string>    
+	NSFileManager *manager = [NSFileManager defaultManager];
     NSString *home = [@"~" stringByExpandingTildeInPath];
     NSDirectoryEnumerator *direnum = [manager enumeratorAtPath: home];
     NSMutableArray *files = [NSMutableArray arrayWithCapacity: 42];

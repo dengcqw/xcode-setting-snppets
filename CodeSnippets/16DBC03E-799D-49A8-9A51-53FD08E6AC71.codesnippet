@@ -9,7 +9,8 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>// 流行字体，瘦字体
+	<string>
+// 流行字体，瘦字体
 #define FONT_HEITI_LIGHT_SIZE(s)            [UIFont fontWithName:@"STHeitiSC-Light" size:s]
 #define FONT_HEITI_LIGHT                    FONT_HEITI_LIGHT_SIZE(14.0f)
 #define FONT_HEITI_SIZE(s)                  [UIFont fontWithName:@"STHeitiSC" size:s]

@@ -7,10 +7,11 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>    //图形上下文形变，解决图片倒立的问题
-    CGContextScaleCTM(ctx, 1, -1);
-    //利用图层形变解决图像倒立问题
-    layer.transform=CATransform3DMakeRotation(M_PI, 1, 0, 0);</string>
+	<string>    
+//图形上下文形变，解决图片倒立的问题
+CGContextScaleCTM(ctx, 1, -1);
+//利用图层形变解决图像倒立问题
+layer.transform=CATransform3DMakeRotation(M_PI, 1, 0, 0);</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>0EF43C40-00E1-4854-BFCF-B473183254F4</string>
 	<key>IDECodeSnippetLanguage</key>

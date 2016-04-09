@@ -10,7 +10,8 @@
 	</array>
 	<key>IDECodeSnippetContents</key>
 	<string>
-    BOOL isAfter = [[NSDate distantFuture] compare:[NSDate distantPast]] == NSOrderedDescending;</string>
+    BOOL isAfter = [[NSDate distantFuture] compare:[NSDate distantPast]] == NSOrderedDescending;
+</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>1B0DC3C5-80DC-4A75-9239-BD77476A6868</string>
 	<key>IDECodeSnippetLanguage</key>

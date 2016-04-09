@@ -9,7 +9,8 @@
 		<string>CodeBlock</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>    // 倾斜效果
+	<string>    
+	// 倾斜效果
     UIInterpolatingMotionEffect *verticalInterpolation = [[UIInterpolatingMotionEffect alloc]initWithKeyPath:@"center.y" type:UIInterpolatingMotionEffectTypeTiltAlongVerticalAxis];
     verticalInterpolation.minimumRelativeValue = @(-15);
     verticalInterpolation.maximumRelativeValue = @(15);

@@ -9,7 +9,8 @@
 		<string>CodeBlock</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>Class theClass = NSClassFromString(@"&lt;#?#&gt;");
+	<string>
+Class theClass = NSClassFromString(@"&lt;#?#&gt;");
 [Hooker hookMethod:@selector(&lt;#?#&gt;)
            ofClass:theClass
         withMethod:class_getInstanceMethod([self class], @selector(&lt;#?#&gt;))

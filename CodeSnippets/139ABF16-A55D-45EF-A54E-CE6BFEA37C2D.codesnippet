@@ -7,7 +7,8 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>static NSThread *&lt;#name#&gt;Thread;
+	<string>
+static NSThread *&lt;#name#&gt;Thread;
 
 + (void)start&lt;#name#&gt;ThreadIfNeeded {
 	static dispatch_once_t predicate;

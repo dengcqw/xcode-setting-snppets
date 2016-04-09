@@ -9,7 +9,9 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>// MARK: - &lt;#Section#&gt;</string>
+	<string>
+	// MARK: - &lt;#Section#&gt;
+</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>3A976597-B234-4659-A1E4-AFA74DDCFB26</string>
 	<key>IDECodeSnippetLanguage</key>

@@ -9,13 +9,14 @@
 		<string>CodeBlock</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>// DISPATCH_TIME_FOREVER= repeat timer
+	<string>
+// DISPATCH_TIME_FOREVER= repeat timer
 double delayInSeconds = &lt;#second#&gt;;
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-    dispatch_after(popTime, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
-        [self performSelectorOnMainThread:@selector(&lt;#SEL#&gt;) withObject:&lt;#obj#&gt; waitUntilDone:&lt;#YESorNO#&gt;];
-        
-    });</string>
+dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+dispatch_after(popTime, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
+    [self performSelectorOnMainThread:@selector(&lt;#SEL#&gt;) withObject:&lt;#obj#&gt; waitUntilDone:&lt;#YESorNO#&gt;];
+});
+</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>0FDFA004-E8DE-40CA-9B83-0208E9228F5F</string>
 	<key>IDECodeSnippetLanguage</key>
