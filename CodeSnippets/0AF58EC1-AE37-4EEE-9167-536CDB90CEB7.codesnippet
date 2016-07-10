@@ -9,11 +9,12 @@
 		<string>CodeBlock</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>    for (UIView *view in self.pageControl.subviews)
-    {
-        view.layer.borderColor = [UIColor whiteColor].CGColor;
-        view.layer.borderWidth = 1.0f;
-    }
+	<string>    
+for (UIView *view in self.pageControl.subviews)
+{
+    view.layer.borderColor = [UIColor whiteColor].CGColor;
+    view.layer.borderWidth = 1.0f;
+}
 </string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>0AF58EC1-AE37-4EEE-9167-536CDB90CEB7</string>

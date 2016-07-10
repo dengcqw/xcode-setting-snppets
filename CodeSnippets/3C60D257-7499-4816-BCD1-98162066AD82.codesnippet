@@ -9,7 +9,8 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>    dispatch_queue_t newQueue = dispatch_queue_create("new_test_queue", DISPATCH_QUEUE_CONCURRENT);
+	<string>    
+    dispatch_queue_t newQueue = dispatch_queue_create("new_test_queue", DISPATCH_QUEUE_CONCURRENT);
     
     dispatch_async(newQueue, ^{
         dispatch_group_t group = dispatch_group_create();

@@ -9,7 +9,8 @@
 		<string>CodeBlock</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>    dispatch_queue_t callerQueue = dispatch_get_current_queue();
+	<string>    
+dispatch_queue_t callerQueue = dispatch_get_current_queue();
 dispatch_queue_t &lt;#queueName#&gt; = dispatch_queue_create("&lt;#queueLabel#&gt;", NULL);
 dispatch_async(&lt;#queueName#&gt;, ^{
         

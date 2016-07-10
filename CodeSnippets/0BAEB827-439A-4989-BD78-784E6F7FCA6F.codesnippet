@@ -15,7 +15,8 @@ self.&lt;#name#&gt;Observer = [[NSNotificationCenter defaultCenter] addObserverF
                                                    queue:[NSOperationQueue mainQueue] 
                                               usingBlock:^(NSNotification *notification) {
                                                   &lt;#code#&gt;
-                                              }];</string>
+                                              }];
+</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>0BAEB827-439A-4989-BD78-784E6F7FCA6F</string>
 	<key>IDECodeSnippetLanguage</key>

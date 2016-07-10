@@ -9,7 +9,8 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>// 多参数据示例
+	<string>
+// 多参数据示例
 - (void)addLayers:(CALayer *)layer, ... {
     va_list args;
     va_start(args, layer);
@@ -19,7 +20,6 @@
     
     va_end(args);
 }
-
 </string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>04182AAD-32E8-4473-8E7C-7045BF139EE8</string>

@@ -9,10 +9,12 @@
 		<string>ClassImplementation</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>override func viewWillAppear(animated: Bool) {
+	<string>
+override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
     &lt;#code#&gt;
-}</string>
+}
+</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>1F9C2030-0262-4B54-81BB-67FA0D47DE9B</string>
 	<key>IDECodeSnippetLanguage</key>

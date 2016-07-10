@@ -9,7 +9,8 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>    [[[[command.executing
+	<string>    
+	[[[[command.executing
         ignore:@NO]
        doNext:^(id _) {
            // The command is currently executing.

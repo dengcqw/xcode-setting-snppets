@@ -9,7 +9,8 @@
 		<string>CodeBlock</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>    NSEnumerator *enumerator;
+	<string>    
+	NSEnumerator *enumerator;
     enumerator = [array objectEnumerator];   // or reverseObjectEnumerator
     id thingie;
     while (thingie = [enumerator nextObject]) {

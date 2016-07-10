@@ -9,9 +9,11 @@
 		<string>CodeBlock</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(&lt;#delayInSeconds#&gt; * Float(NSEC_PER_SEC))), dispatch_get_main_queue()) {
+	<string>        
+		dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(&lt;#delayInSeconds#&gt; * Float(NSEC_PER_SEC))), dispatch_get_main_queue()) {
             &lt;#closure_logic#&gt;
-        }</string>
+        }
+    </string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>2F7066DD-B2C9-4BEE-A631-1E304BCABC5E</string>
 	<key>IDECodeSnippetLanguage</key>

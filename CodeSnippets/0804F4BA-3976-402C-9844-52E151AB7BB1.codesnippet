@@ -7,7 +7,8 @@
 		<string>CodeExpression</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>// MARK:- ---&gt; Textfield Delegates
+	<string>
+// MARK:- ---&gt; Textfield Delegates
 func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -&gt; Bool {
     print("While entering the characters this method gets called")
     return true;
@@ -29,7 +30,8 @@ notificationCenter.addObserver(
     object: nil
 )
 func textFieldTextChanged(sender : AnyObject) {
-}</string>
+}
+</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>0804F4BA-3976-402C-9844-52E151AB7BB1</string>
 	<key>IDECodeSnippetLanguage</key>

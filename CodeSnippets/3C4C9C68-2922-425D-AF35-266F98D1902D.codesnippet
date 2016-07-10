@@ -9,7 +9,8 @@
 		<string>CodeExpression</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"&lt;#filename#&gt;" ofType:@"txt"];
+	<string>    
+	NSString *filePath = [[NSBundle mainBundle] pathForResource:@"&lt;#filename#&gt;" ofType:@"txt"];
     NSArray *lineList = [[NSString stringWithContentsOfFile:filePath usedEncoding:nil error:nil] componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
 </string>
 	<key>IDECodeSnippetIdentifier</key>

@@ -9,7 +9,8 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>/*!
+	<string>
+/*!
  @brief  use setctionNameKeyPath, sort with the key first.
  */
 - (NSFetchedResultsController *)fetchedResultsController {

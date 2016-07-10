@@ -9,7 +9,8 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>- (NSDictionary *)outputSetting {
+	<string>
+- (NSDictionary *)outputSetting {
     NSDictionary *videoCleanApertureSettings = [NSDictionary dictionaryWithObjectsAndKeys:
                                                 [NSNumber numberWithInt:320], AVVideoCleanApertureWidthKey,
                                                 [NSNumber numberWithInt:480], AVVideoCleanApertureHeightKey,
@@ -43,7 +44,6 @@
     return videoSettings;
     
 }
-
 </string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>307FFBBC-FBD8-4591-9FF7-7220C84C8F35</string>

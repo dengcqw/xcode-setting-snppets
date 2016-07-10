@@ -9,14 +9,16 @@
 		<string>ClassImplementation</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>- (void)&lt;#methodName#&gt;WithCompletionBlock:(void (^)(NSString *message, NSError *error))&lt;#returnBlock#&gt; {
+	<string>
+- (void)&lt;#methodName#&gt;WithCompletionBlock:(void (^)(NSString *message, NSError *error))&lt;#returnBlock#&gt; {
     NSString *message = nil;
     NSError *error = nil;
     
     if (&lt;#returnBlock#&gt;) {
         &lt;#returnBlock#&gt;(message, error);
     }
-}</string>
+}
+</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>03E04BF1-75FA-4BE8-888C-2D6D761A1FD6</string>
 	<key>IDECodeSnippetLanguage</key>

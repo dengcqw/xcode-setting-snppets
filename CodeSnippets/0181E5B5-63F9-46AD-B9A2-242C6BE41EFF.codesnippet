@@ -9,22 +9,23 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>[[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
+	<string>
+[[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
 
 // [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedRotate:) name:UIDeviceOrientationDidChangeNotification object:nil];
 // [[NSNotificationCenter defaultCenter] removeObserver:self name:UIDeviceOrientationDidChangeNotification object:nil];
 /**
- *  @brief  在view里，监听屏幕旋转通知
- *
- *  @param notification 屏幕旋转通知
- */
+*  @brief  在view里，监听屏幕旋转通知
+*
+*  @param notification 屏幕旋转通知
+*/
 -(void)receivedRotate: (NSNotification *)notification {
 	dispatch_async(dispatch_get_main_queue(), ^(void) {
-        
-        [UIView animateWithDuration:0.2 animations:^(void) {
-            // 宽变成高，高变成宽
-        }];
-    });
+    
+    [UIView animateWithDuration:0.2 animations:^(void) {
+        // 宽变成高，高变成宽
+    }];
+});
 }
 </string>
 	<key>IDECodeSnippetIdentifier</key>

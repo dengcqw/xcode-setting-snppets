@@ -9,10 +9,11 @@
 		<string>CodeBlock</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>    UIBezierPath *path = [UIBezierPath bezierPath];
-	[path moveToPoint:CGPointMake(0, 0)];
-	[path addLineToPoint:CGPointMake(0, 0)];
-	[path addLineToPoint:CGPointMake(0, 0)];
+	<string>    
+UIBezierPath *path = [UIBezierPath bezierPath];
+[path moveToPoint:CGPointMake(0, 0)];
+[path addLineToPoint:CGPointMake(0, 0)];
+[path addLineToPoint:CGPointMake(0, 0)];
 </string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>1571F80E-CA7E-44F6-B192-F312E15919B1</string>

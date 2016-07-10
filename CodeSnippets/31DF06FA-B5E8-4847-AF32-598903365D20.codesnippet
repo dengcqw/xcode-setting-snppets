@@ -9,7 +9,9 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>[NSValue valueWith&lt;#?#&gt;];</string>
+	<string>
+		[NSValue valueWith&lt;#?#&gt;];
+	</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>31DF06FA-B5E8-4847-AF32-598903365D20</string>
 	<key>IDECodeSnippetLanguage</key>

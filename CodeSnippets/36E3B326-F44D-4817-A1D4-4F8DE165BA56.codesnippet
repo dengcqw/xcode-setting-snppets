@@ -9,7 +9,8 @@
 		<string>CodeExpression</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>    // request data
+	<string>    
+	// request data
     NSURLSessionDataTask *jsonDataTask = [session dataTaskWithURL:yourNSURL
                                                 completionHandler:^(NSData *data,
                                                                     NSURLResponse *response,

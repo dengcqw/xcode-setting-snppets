@@ -9,7 +9,9 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>@weakify(self);</string>
+	<string>
+@weakify(self);
+	</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>12498E66-7387-4F63-85EE-BA0F468D4FC0</string>
 	<key>IDECodeSnippetLanguage</key>

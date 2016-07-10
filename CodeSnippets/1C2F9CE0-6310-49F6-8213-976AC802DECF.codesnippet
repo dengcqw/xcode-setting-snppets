@@ -9,7 +9,9 @@
 		<string>CodeExpression</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>[&lt;#string#&gt; hasPrefix:@"&lt;#match#&gt;"]</string>
+	<string>
+[&lt;#string#&gt; hasPrefix:@"&lt;#match#&gt;"]
+</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>1C2F9CE0-6310-49F6-8213-976AC802DECF</string>
 	<key>IDECodeSnippetLanguage</key>

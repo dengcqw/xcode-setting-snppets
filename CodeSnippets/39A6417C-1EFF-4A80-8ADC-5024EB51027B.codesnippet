@@ -9,7 +9,9 @@
 		<string>TopLevel</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>#define RUNNING_IOS_7_OR_LATER  (floor(NSFoundationVersionNumber) &gt; NSFoundationVersionNumber_iOS_6_1)</string>
+	<string>
+		#define RUNNING_IOS_7_OR_LATER  (floor(NSFoundationVersionNumber) &gt; NSFoundationVersionNumber_iOS_6_1)
+	</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>39A6417C-1EFF-4A80-8ADC-5024EB51027B</string>
 	<key>IDECodeSnippetLanguage</key>

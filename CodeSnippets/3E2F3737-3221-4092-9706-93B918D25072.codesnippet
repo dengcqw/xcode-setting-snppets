@@ -9,7 +9,8 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>//UIResponder+FirstResponder.h
+	<string>
+//UIResponder+FirstResponder.h
 
 #import &lt;Cocoa/Cocoa.h&gt;
 @interface UIResponder (FirstResponder)
@@ -29,7 +30,8 @@ static __weak id currentFirstResponder;
 -(void)findFirstResponder:(id)sender {
     currentFirstResponder = self;
 }
-@end</string>
+@end
+</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>3E2F3737-3221-4092-9706-93B918D25072</string>
 	<key>IDECodeSnippetLanguage</key>
