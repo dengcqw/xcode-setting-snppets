@@ -9,7 +9,7 @@
 		<string>CodeExpression</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>make.right.equalTo(superview.mas_right).offset(&lt;#0#&gt;);</string>
+	<string>make.right.equalTo(superview.mas_right).offset(-&lt;#0#&gt;);</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>66F4A2F8-FE03-4777-B4CE-26F60F2A4FF2</string>
 	<key>IDECodeSnippetLanguage</key>

@@ -3,22 +3,25 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>GCDTimer</string>
+	<string>switch</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>CodeBlock</string>
+		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(&lt;#delayInSeconds#&gt; * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-    &lt;#code to be executed after a specified delay#&gt;
-});
+	<string>switch (&lt;#?#&gt;) {
+case .&lt;#?#&gt;:
+case .&lt;#?#&gt;:
+case .&lt;#?#&gt;:
+default:
+}
 </string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>0FDFA004-E8DE-40CA-9B83-0208E9228F5F</string>
+	<string>413063FE-9189-4BEE-AF77-B7030C08C876</string>
 	<key>IDECodeSnippetLanguage</key>
-	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>GCD - timer</string>
+	<string>Swift - switch</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
