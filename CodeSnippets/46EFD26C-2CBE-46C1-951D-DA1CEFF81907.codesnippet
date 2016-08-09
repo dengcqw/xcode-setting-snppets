@@ -3,34 +3,36 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>djUpdateConstraints</string>
+	<string>djCellTemplate</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>ClassImplementation</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>// avoid add constraints too many times
-- (void)updateConstraints {
-    if (self.didAddConstraints) {
-        [super updateConstraints];
-        return;
+	<string>- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self) {
+        [self setBackgroundColor:[UIColor whiteColor]];
+        [self setSelectionStyle:UITableViewCellSelectionStyleNone];
+        self.accessoryType = UITableViewCellAccessoryNone;
     }
     
-    //re add custom constraints
-    
-    self.didAddConstraints = YES;
-    
-    [super updateConstraints];
+    return self;
 }
-</string>
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+}
+
+- (void)renderViewModel:(RXUViewModel *)viewModel {
+    
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>61B36303-8B8A-479A-AA9E-2194CB3B46F4</string>
+	<string>46EFD26C-2CBE-46C1-951D-DA1CEFF81907</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
-	<key>IDECodeSnippetSummary</key>
-	<string>avoid add constraints too many times</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>updateConstraints</string>
+	<string>Cell Template</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
