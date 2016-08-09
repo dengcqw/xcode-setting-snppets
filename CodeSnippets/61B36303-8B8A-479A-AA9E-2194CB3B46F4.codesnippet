@@ -3,23 +3,37 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>djFdDocumentsPath</string>
+	<string>djUpdateConstraints</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>CodeBlock</string>
+		<string>ClassImplementation</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>NSURL *documentURL = [NSURL fileURLWithPath:[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject]];
+	<string>// avoid add constraints too many times
+- (void)updateConstraints {
+    if (self.didAddConstraints) {
+        [super updateConstraints];
+        return;
+    }
+    
+    //re add custom constraints
+    
+    self.didAddConstraints = YES;
+    
+    [super updateConstraints];
+}
 </string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>F6724EDF-57C7-4D6F-B8A3-944ED955799C</string>
+	<string>61B36303-8B8A-479A-AA9E-2194CB3B46F4</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>avoid add constraints too many times</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Fd - documents directory path</string>
+	<string>updateConstraints</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>
