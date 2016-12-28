@@ -30,7 +30,7 @@
 	<key>IDECodeSnippetSummary</key>
 	<string>avoid add constraints too many times</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>updateConstraints</string>
+	<string>mas - updateConstraints</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

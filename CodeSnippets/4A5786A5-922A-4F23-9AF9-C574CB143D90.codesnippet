@@ -15,10 +15,8 @@
 	<string>4A5786A5-922A-4F23-9AF9-C574CB143D90</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
-	<key>IDECodeSnippetSummary</key>
-	<string>Send a notification with an optional object and user info dictionary</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Notification: Post with User Info</string>
+	<string>Notification - Post with User Info</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

@@ -3,14 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>swift-uitableviewdatasource</string>
+	<string>djTableViewDataSourceExtension</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>ClassImplementation</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>    
-	//MARK: UITableViewDataSource
+	<string>    //MARK: UITableViewDataSource
+extension &lt;#class#&gt;: UITableViewDataSource {
 
     func numberOfSectionsInTableView(tableView: UITableView) -&gt; Int {
         return &lt;#numberOfSections#&gt;
@@ -21,7 +21,7 @@
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -&gt; UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(&lt;#identifier#&gt;, forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(&lt;#identifier#&gt;, forIndexPath: indexPath) as! UITableViewCell
         configureCell(cell, forRowAtIndexPath: indexPath)
         return cell
     }
@@ -29,15 +29,13 @@
     func configureCell(cell: UITableViewCell, forRowAtIndexPath: NSIndexPath) {
         
     }
-</string>
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>380DBCD1-ECFB-4A8C-B7B2-DDE628A540E3</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
-	<key>IDECodeSnippetSummary</key>
-	<string>UITableViewDataSource snippet for Swift</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Swift UITableViewDataSource</string>
+	<string>Swift - -UITableView DataSource extension</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

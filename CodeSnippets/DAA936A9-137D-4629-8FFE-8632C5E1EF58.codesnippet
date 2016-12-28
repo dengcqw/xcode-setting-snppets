@@ -9,20 +9,13 @@
 		<string>ClassImplementation</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>class var sharedInstance : &lt;#SingletonClass#&gt; {
-    struct Static {
-        static let instance : &lt;#SingletonClass#&gt; = &lt;#SingletonClass#&gt;()
-    }
-    return Static.instance
-}</string>
+	<string>static let sharedInstance : &lt;#SingletonClass#&gt; = &lt;#SingletonClass#&gt;()</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>DAA936A9-137D-4629-8FFE-8632C5E1EF58</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
-	<key>IDECodeSnippetSummary</key>
-	<string>Singleton pattern using nested struct in Swift (from Swift 1.2 you can use newer version)</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Swift Singleton</string>
+	<string>Swift - Singleton</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

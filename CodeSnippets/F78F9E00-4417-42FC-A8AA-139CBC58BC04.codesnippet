@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        enum CustomError: String, Error {
+            case Foo = "Foo"
+            case Bar = "Bar"
+            case Other = "Other"
+            
+            var nsError: NSError {
+                return NSError(domain: "CustomError.\(rawValue)", code: 0, userInfo: nil)
+            }
+            
+            var description: String {
+                return "\(rawValue) Error"
+            }
+        }
+        
+        let (signal, observer) = Signal&lt;String, NSError&gt;.pipe()
+        
+        signal
+            .mapError { (error: NSError) -&gt; CustomError in
+                switch error.domain {
+                case "com.example.foo":
+                    return .Foo
+                case "com.example.bar":
+                    return .Bar
+                default:
+                    return .Other
+                }
+            }
+            .observeFailed { error in
+                print(error)
+        }
+        
+        observer.send(error: NSError(domain: "com.example.foo", code: 42, userInfo: nil))    // prints "Foo"</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>F78F9E00-4417-42FC-A8AA-139CBC58BC04</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift - RAC - mapError</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

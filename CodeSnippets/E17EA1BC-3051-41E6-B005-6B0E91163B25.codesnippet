@@ -16,10 +16,8 @@
 	<string>E17EA1BC-3051-41E6-B005-6B0E91163B25</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
-	<key>IDECodeSnippetSummary</key>
-	<string>present controller with clear color/ transparent</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>present transparent view controller </string>
+	<string>trick - present transparent view controller </string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

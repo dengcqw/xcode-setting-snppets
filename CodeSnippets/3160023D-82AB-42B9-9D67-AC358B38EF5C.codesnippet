@@ -2,16 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>djMacroUnused</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>
-		#pragma unused (&lt;#variable#&gt;)
-	</string>
+	<string>#pragma unused (&lt;#variable#&gt;)</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>3160023D-82AB-42B9-9D67-AC358B38EF5C</string>
 	<key>IDECodeSnippetLanguage</key>

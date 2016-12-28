@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        {
+            BOOL isDir = NO;
+            NSFileManager *fileManager = [NSFileManager defaultManager];
+            NSString *filePath = [self fileDocumentPath]; // Must use -[NSURL path]
+            if (![fileManager fileExistsAtPath:filePath isDirectory:&amp;isDir]) {
+                
+                // create dir
+                //NSError *error;
+                //[[NSFileManager defaultManager]createDirectoryAtPath:filePath withIntermediateDirectories:YES attributes:nil error:&amp;error];
+                //NSLog(@"Error after creating directory:\n%@",error);
+                
+                // create file
+                BOOL ret = [fileManager createFileAtPath:filePath contents:nil attributes:nil];
+                NSLog(@"creating file successfull? %@", ret?@"YES":@"NO");
+            } else {
+                
+                // file exists - I don't expect to use the else block. This is for figuring out what's going on.
+                NSLog(@"File %@ exists -- is it a directory? %@", filePath, isDir?@"YES":@"NO");
+            }
+            
+            // write data to file
+            NSData *jsonData = [NSJSONSerialization dataWithJSONObject:list options:0 error:&amp;error];
+            BOOL ret = [jsonData writeToFile:filePath atomically:YES];
+            NSLog(@"write file successful?:%@",ret?@"YES":@"NO");
+            
+            // read file
+            NSData *content = nil;
+            if ([fileManager fileExistsAtPath:filePath]) {
+                content = [fileManager contentsAtPath:filePath];
+            } else {
+                NSLog(@"read file not exist");
+            }
+        }
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>C094B43F-C3BC-432B-B0DA-45F5A799AB5E</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Fd - file create write read demo</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        var tries = 0
+        let limit = 2
+        let error = NSError(domain: "domain", code: 0, userInfo: nil)
+        let producer = SignalProducer&lt;String, NSError&gt; { (observer, _) in
+            if tries &lt; limit {
+                tries = tries + 1
+                observer.send(error: error)
+            } else {
+                observer.send(value: "Success")
+                observer.sendCompleted()
+            }
+        }
+        
+        producer
+            .on(failed: {e in print("Failure")})    // prints "Failure" twice
+            .retry(upTo: 2)
+            .start { event in
+                switch event {
+                case let .value(value):
+                    print(value)                     // prints "Success"
+                case let .failed(error):
+                    print("Failed: \(error)")
+                case .completed:
+                    print("Completed")
+                case .interrupted:
+                    print("Interrupted")
+                }
+        }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>828288BC-2B1A-423D-9371-E387AA2DC0D2</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift - RAC - retry producer</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

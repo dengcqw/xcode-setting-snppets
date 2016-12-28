@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>signal.observe(Signal.Observer { event in
+            switch event {
+            case let .value(value):
+                print("Next: \(value)")
+            case let .failed(error):
+                print("Failed: \(error)")
+            case .completed:
+                print("Completed")
+            case .interrupted:
+                print("Interrupted")
+            }
+        })</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>543C0698-9D70-47BC-B150-6AB9CE0EFFF8</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift - RAC - observe signal</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

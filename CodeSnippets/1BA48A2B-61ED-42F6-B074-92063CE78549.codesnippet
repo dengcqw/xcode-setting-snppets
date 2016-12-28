@@ -7,9 +7,7 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>
-[NSBundle mainBundle].infoDictionary[@"CFBundleDisplayName"]
-</string>
+	<string>[NSBundle mainBundle].infoDictionary[@"CFBundleDisplayName"]</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>1BA48A2B-61ED-42F6-B074-92063CE78549</string>
 	<key>IDECodeSnippetLanguage</key>

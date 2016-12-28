@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>TopLevel</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>// 可以通过extension增加方法或默认实现
+@objc protocol Demo {
+    var mustBeSettable: Int { get set }
+    var doesNotNeedToBeSettable: Int { get }
+    // 类型属性(type property)
+    static var someTypeProperty: Int { get set }
+    
+    func someMethod()
+    static func someTypeMethod()
+    // 可选属性&amp;方法 需要声明协议@objc protocol
+    // 如果有返回值，则返回可选值
+    @objc optional func incrementForCount(count: Int) -&gt; Int
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>DD46C4C7-629C-4363-8B6F-35A8FB2B7B2E</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift - protocol  demo</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
