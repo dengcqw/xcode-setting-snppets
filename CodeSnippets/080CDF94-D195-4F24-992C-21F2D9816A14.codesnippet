@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    // 移动cell时，必须实现下面方法，不然看不到，移动图标
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        // 必须交换数据，不然，reload后又复原了
+        let srcmodel =  self.dataModels[sourceIndexPath.row]
+        
+        if sourceIndexPath.row &lt; destinationIndexPath.row {
+            self.dataModels.insert(srcmodel, at: destinationIndexPath.row+1)
+            self.dataModels.remove(at: sourceIndexPath.row)
+        } else {
+            self.dataModels.remove(at: sourceIndexPath.row)
+            self.dataModels.insert(srcmodel, at: destinationIndexPath.row)
+        }
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>080CDF94-D195-4F24-992C-21F2D9816A14</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift - UIKit - tableview move cell </string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

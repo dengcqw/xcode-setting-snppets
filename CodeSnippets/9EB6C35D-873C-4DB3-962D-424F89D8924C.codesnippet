@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        let (signalA, observerA) = Signal&lt;String, NoError&gt;.pipe()
+        let (signalB, observerB) = Signal&lt;String, NoError&gt;.pipe()
+        let (signalC, observerC) = Signal&lt;String, NoError&gt;.pipe()
+        
+        let producerA = SignalProducer&lt;String, NoError&gt;(signal: signalA)
+        let producerB = SignalProducer&lt;String, NoError&gt;(signal: signalB)
+        let producerC = SignalProducer&lt;String, NoError&gt;(signal: signalC)
+        
+        let (signal, observer) = Signal&lt;SignalProducer&lt;String, NoError&gt;, NoError&gt;.pipe() // send signal as value
+        let signalProducer:SignalProducer = SignalProducer&lt;SignalProducer&lt;String, NoError&gt;, NoError&gt;(signal: signal)
+        
+        signalProducer.flatten(.latest).startWithValues { next in print(next) }
+        
+        observer.send(value: producerA)   // nothing printed
+        observerC.send(value: "X")        // nothing printed
+        observerA.send(value: "a")        // prints "a"
+        observerB.send(value: "1")        // nothing printed
+        observer.send(value: producerB)   // prints "1"
+        observerA.send(value: "b")        // nothing printed
+        observerB.send(value: "2")        // prints "2"
+        observerC.send(value: "Y")        // nothing printed
+        observerA.send(value: "c")        // nothing printed
+        observer.send(value: producerC)   // prints "X", "Y"
+        observerB.send(value: "3")        // nothing printed
+        observerC.send(value: "Z")        // prints "Z"</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>9EB6C35D-873C-4DB3-962D-424F89D8924C</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift - RAC - producer flatten latest</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

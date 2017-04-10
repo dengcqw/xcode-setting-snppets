@@ -6,7 +6,7 @@
 	<string>notification_observewithblock</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>CodeBlock</string>
+		<string>CodeExpression</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
 	<string>
@@ -21,10 +21,8 @@ self.&lt;#name#&gt;Observer = [[NSNotificationCenter defaultCenter] addObserverF
 	<string>0BAEB827-439A-4989-BD78-784E6F7FCA6F</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
-	<key>IDECodeSnippetSummary</key>
-	<string>Observe a named notification using a block</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Notification: Observe by Name with Block</string>
+	<string>Notification - Observe with Block</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

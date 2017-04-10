@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        // pipe like RAC Subject
+        let (signal, observer) = Signal&lt;String, NSError&gt;.pipe()
+        
+        signal
+            .map { string in string.uppercased() }
+            .observeResult({ (result) in
+                print(result.value)
+            })
+        
+        observer.send(value: "a")     // Prints A
+        observer.send(value: "b")     // Prints B
+        observer.send(value: "c")     // Prints C
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>DAA1B26D-95A8-4690-81FB-042217283A24</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift - RAC - pipe demo</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

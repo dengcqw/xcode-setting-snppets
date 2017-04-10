@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        let (signal, observer) = Signal&lt;String, NSError&gt;.pipe()
+        let producer = SignalProducer&lt;String, NSError&gt;(signal: signal)
+        let error = NSError(domain: "domain", code: 0, userInfo: nil)
+        
+        producer
+            .flatMapError { _ in SignalProducer&lt;String, NoError&gt;(value: "Default") }
+            .startWithValues { next in print(next) }
+        
+        observer.send(value: "First")     // prints "First"
+        observer.send(value: "Second")    // prints "Second"
+        observer.send(error: error)     // prints "Default"</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>55EAEB93-2971-4AF9-A178-8EC8E3ABC942</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift - RAC - flatMapError</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

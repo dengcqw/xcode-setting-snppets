@@ -10,10 +10,6 @@
 	</array>
 	<key>IDECodeSnippetContents</key>
 	<string>// Set Frame
-// Initializes a view frame inside a code block
-// Platform: All
-// Language: Objective-C
-// Completion Scope: Function or Method
 
 &lt;# view #&gt;.frame = ({
     CGRect frame = &lt;# view #&gt;.frame;

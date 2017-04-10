@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        let (signalA, lettersObserver) = Signal&lt;String, NoError&gt;.pipe()
+        let (signalB, numbersObserver) = Signal&lt;String, NoError&gt;.pipe()
+        
+        let producerA = SignalProducer&lt;String, NoError&gt;(signal: signalA)
+        let producerB = SignalProducer&lt;String, NoError&gt;(signal: signalB)
+        
+        let (signal, observer) = Signal&lt;SignalProducer&lt;String, NoError&gt;, NoError&gt;.pipe() // send signal as value
+        let signalProducer:SignalProducer = SignalProducer&lt;SignalProducer&lt;String, NoError&gt;, NoError&gt;(signal: signal)
+        
+        signalProducer.flatten(.concat).startWithValues { next in print(next) }
+        
+        observer.send(value: producerA)
+        observer.send(value: producerB)
+        observer.sendCompleted()
+        
+        numbersObserver.send(value: "1")    // nothing printed
+        lettersObserver.send(value: "a")    // prints "a"
+        lettersObserver.send(value: "b")    // prints "b"
+        numbersObserver.send(value: "2")    // nothing printed
+        lettersObserver.send(value: "c")    // prints "c"
+        lettersObserver.sendCompleted()    // prints "1", "2"
+        numbersObserver.send(value: "3")    // prints "3"
+        numbersObserver.sendCompleted()</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>E18C5281-D282-4E23-8344-289197447633</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift - RAC - producer flatten concat</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    lazy var tableView: UITableView = {
+        let tb = UITableView(frame: CGRect.zero, style: UITableViewStyle.plain)
+        tb.delegate = self
+        tb.dataSource = self
+        tb.tableFooterView = UIView() // 加上这个，就不会看到很多默认分割线
+        tb.register(UINib(nibName:"&lt;#DemoTableViewCell#&gt;", bundle:nil), forCellReuseIdentifier: "&lt;#DemoTableViewCell#&gt;")
+        return tb
+    }()
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>BDAF7EC8-17FE-4427-8DF9-D677FC32962D</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift - UIKit - lazy tableview</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

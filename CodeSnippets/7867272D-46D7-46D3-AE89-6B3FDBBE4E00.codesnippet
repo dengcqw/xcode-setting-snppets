@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>djAssociatedVar</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    private struct AssociatedKeys {
+        static var TableView: UInt8 = 0
+    }
+    
+    var tableView: UITableView? {
+        get {
+            return objc_getAssociatedObject(self, &amp;AssociatedKeys.TableView) as? UITableView
+        }
+        set {
+            if let newValue = newValue {
+                objc_setAssociatedObject(self, &amp;AssociatedKeys.TableView, newValue as UITableView?, objc_AssociationPolicy.OBJC_ASSOCIATION_ASSIGN)
+            }
+        }
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>7867272D-46D7-46D3-AE89-6B3FDBBE4E00</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift - associated var</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

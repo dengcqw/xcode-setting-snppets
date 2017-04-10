@@ -9,8 +9,7 @@
 		<string>ClassImplementation</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>
-- (void)initConstaints {
+	<string>- (void)initConstaints {
     UIView *superview = self.view;
     &lt;#code#&gt;
 }

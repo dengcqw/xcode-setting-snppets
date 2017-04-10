@@ -7,17 +7,17 @@
 		<string>CodeExpression</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>let button = UIButton(frame: CGRectZero)
-button.setTitle("&lt;#title#&gt;", forState: UIControlState.Normal)
-button.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
-button.backgroundColor = UIColor.whiteColor()
-button.addTarget(self, action: "buttonPressedAction:", forControlEvents: UIControlEvents.TouchUpInside)
+	<string>        let button = UIButton(frame: CGRect.zero)
+        button.setTitle("全选", for: UIControlState.normal)
+        button.setTitleColor(UIColor.black, for: UIControlState.normal)
+        button.backgroundColor = UIColor.white
+        button.addTarget(self, action: "buttonPressedAction:", for: UIControlEvents.touchUpInside)
         
-self.view.addSubview(button)
+        self.view.addSubview(button)
         
-func buttonPressedAction(sender: UIButton) {
-    
-}</string>
+        func buttonPressedAction(sender: UIButton) {
+            
+        }</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>AA8F54F9-98FE-4645-B153-B9745A7E5C49</string>
 	<key>IDECodeSnippetLanguage</key>

@@ -12,7 +12,6 @@
 	<string>    CABasicAnimation *basicAnim = [CABasicAnimation animationWithKeyPath:@"&lt;#?#&gt;"];
     
     // CAMediaTiming protocal
-    basicAnim.beginTime = CFAbsoluteTimeGetCurrent();
     basicAnim.duration = 5;
     basicAnim.repeatCount = 5;
     basicAnim.repeatDuration = 5;

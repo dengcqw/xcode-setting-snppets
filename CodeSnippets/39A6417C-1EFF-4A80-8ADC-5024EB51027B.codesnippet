@@ -2,15 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>djMacroIs_ios7_or_later</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>TopLevel</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>
-		#define RUNNING_IOS_7_OR_LATER  (floor(NSFoundationVersionNumber) &gt; NSFoundationVersionNumber_iOS_6_1)
+	<string>#define RUNNING_IOS_7_OR_LATER  (floor(NSFoundationVersionNumber) &gt; NSFoundationVersionNumber_iOS_6_1)
 	</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>39A6417C-1EFF-4A80-8ADC-5024EB51027B</string>

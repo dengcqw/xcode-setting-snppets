@@ -3,17 +3,37 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>__tableviewdelegate</string>
+	<string>djTableViewDelegate</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
 	<string>//MARK: UITableViewDelegate
-extension &lt;#Class#&gt; : UITableViewDelegate {
+extension &lt;#class#&gt;: UITableViewDelegate {
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        &lt;#code#&gt;
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -&gt; CGFloat {
+        return &lt;#height#&gt;
+    }
+    
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -&gt; CGFloat {
+        return &lt;#height#&gt;
+    }
+    
+    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -&gt; CGFloat {
+        return &lt;#height#&gt;
+    }
+    
+    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -&gt; UIView? {
+        
+    }
+    
+    override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -&gt; UIView? {
+        
     }
 }</string>
 	<key>IDECodeSnippetIdentifier</key>
@@ -21,7 +41,7 @@ extension &lt;#Class#&gt; : UITableViewDelegate {
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Swift-UITableviewDelegate</string>
+	<string>Swift - UITableview Delegate extension</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

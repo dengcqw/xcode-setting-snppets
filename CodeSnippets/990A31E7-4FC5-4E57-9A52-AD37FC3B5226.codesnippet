@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        let (numbersSignal, numbersObserver) = Signal&lt;Int, NoError&gt;.pipe()
+        let (lettersSignal, lettersObserver) = Signal&lt;String, NoError&gt;.pipe()
+        
+        let signal = Signal.combineLatest(numbersSignal, lettersSignal)
+        signal.observeValues { next in print("Next: \(next)") }
+        signal.observeCompleted { print("Completed") }
+        
+        numbersObserver.send(value: 0)      // nothing printed
+        numbersObserver.send(value: 1)      // nothing printed
+        lettersObserver.send(value: "A")    // prints (1, A)
+        numbersObserver.send(value: 2)      // prints (2, A)
+        numbersObserver.sendCompleted()  // nothing printed, signal not completed
+        
+        lettersObserver.send(value: "B")    // prints (2, B)
+        lettersObserver.send(value: "C")    // prints (2, C)
+        lettersObserver.sendCompleted()  // prints "Completed" signal completed</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>990A31E7-4FC5-4E57-9A52-AD37FC3B5226</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Swift - RAC - combineLatest</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

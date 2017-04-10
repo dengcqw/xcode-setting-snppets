@@ -18,7 +18,7 @@ let &lt;#cachesURL#&gt; = fileManager.URLsForDirectory(NSSearchPathDirectory.&lt
 	<key>IDECodeSnippetSummary</key>
 	<string>Create a URL to a search path directory.</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>NSFileManager: URLForDirectory</string>
+	<string>Swift - NSFileManager: URLForDirectory</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

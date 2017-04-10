@@ -9,7 +9,12 @@
 		<string>ClassImplementation</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>
+	<string>- (void)setDelegate:(id&lt;UINavigationControllerDelegate&gt;)delegate {
+    if (delegate != self) {
+        self.externalDelegate = delegate;
+    }
+    [super setDelegate:self];
+}
 #pragma mark - Method Forwarding
 - (BOOL)respondsToSelector:(SEL)aSelector
 {
