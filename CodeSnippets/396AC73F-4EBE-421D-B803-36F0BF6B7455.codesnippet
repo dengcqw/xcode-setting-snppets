@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        let buttonAction:Action&lt;UIButton, Any, NoError&gt; = Action&lt;UIButton, Any, NoError&gt;{ button in
+            print(button)
+            return SignalProducer&lt;Any, NoError&gt;
+                .empty
+                .on(completed: {
+                    self.imgCornerRadius = self.imgCornerRadius + 2
+                    self.flowImageContainer.layer.cornerRadius = self.imgCornerRadius
+                })
+        }
+        
+        mirrorButton.reactive.pressed = CocoaAction&lt;UIButton&gt;.init(buttonAction, { $0 } /* return button */)
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>396AC73F-4EBE-421D-B803-36F0BF6B7455</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>RAC swift button action</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
