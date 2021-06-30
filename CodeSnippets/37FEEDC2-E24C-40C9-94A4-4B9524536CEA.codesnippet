@@ -3,26 +3,25 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>djLabel</string>
+	<string>makeConstraints</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>CodeExpression</string>
+		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>let label = UILabel(frame: CGRect.zero)
-label.textAlignment = .center
-label.numberOfLines = 1
-label.backgroundColor = .clear
-label.textColor = .black
-label.font = UIFont.systemFontOfSize(16)
-label.text = "&lt;#text#&gt;"
-self.view.addSubview(label)</string>
+	<string>        &lt;#view#&gt;.snp.makeConstraints { make in
+            make.top.equalTo(self.view.snp.top).offset(0)
+            make.left.equalTo(self.view.snp.left).offset(0)
+            make.centerX.equalTo(self.view)
+            make.width.equalTo(0)
+            make.height.equalTo(0)
+        }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>B41E61D5-D5FE-4C73-BE00-3FFDCA7651DD</string>
+	<string>37FEEDC2-E24C-40C9-94A4-4B9524536CEA</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Swift - label</string>
+	<string>Swift - snapkit makeConstraints</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

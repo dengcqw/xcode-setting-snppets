@@ -3,26 +3,19 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>djLabel</string>
+	<string>djQimoDeviceList</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>CodeExpression</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>let label = UILabel(frame: CGRect.zero)
-label.textAlignment = .center
-label.numberOfLines = 1
-label.backgroundColor = .clear
-label.textColor = .black
-label.font = UIFont.systemFontOfSize(16)
-label.text = "&lt;#text#&gt;"
-self.view.addSubview(label)</string>
+	<string>guard let devices = TVGQimoManager.shareInstance().getDeviceModels() else { return }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>B41E61D5-D5FE-4C73-BE00-3FFDCA7651DD</string>
+	<string>E0E9C9F5-6FBE-458C-A47D-2DB211C582D7</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Swift - label</string>
+	<string>Swift - Qimo device list</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

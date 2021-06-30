@@ -9,7 +9,7 @@
 		<string>ClassImplementation</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>override func viewDidDisappear(animated: Bool) {
+	<string>override func viewDidDisappear(_ animated: Bool) {
     super.viewDidAppear(animated)
     &lt;#code#&gt;
 }</string>

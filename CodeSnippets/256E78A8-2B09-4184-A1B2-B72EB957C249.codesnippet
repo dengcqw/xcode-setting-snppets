@@ -3,26 +3,19 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>djLabel</string>
+	<string>logEvent</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>CodeExpression</string>
+		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>let label = UILabel(frame: CGRect.zero)
-label.textAlignment = .center
-label.numberOfLines = 1
-label.backgroundColor = .clear
-label.textColor = .black
-label.font = UIFont.systemFontOfSize(16)
-label.text = "&lt;#text#&gt;"
-self.view.addSubview(label)</string>
+	<string>TVGStatisticCenter.shared().logEvent(&lt;#eventName#&gt;, attributes: [:])</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>B41E61D5-D5FE-4C73-BE00-3FFDCA7651DD</string>
+	<string>256E78A8-2B09-4184-A1B2-B72EB957C249</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Swift - label</string>
+	<string>Swift - logEvent</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

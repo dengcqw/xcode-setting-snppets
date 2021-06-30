@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>djUIImage</string>
+	<string>djImage</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>CodeBlock</string>
+		<string>CodeExpression</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>let img = UIImage(named: &lt;#T##String#&gt;)</string>
+	<string>let image = UIImage(named: "&lt;#T##String#&gt;")</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>555C5422-E7C2-4D3A-8D94-D4268AB5BB41</string>
 	<key>IDECodeSnippetLanguage</key>

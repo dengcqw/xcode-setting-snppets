@@ -10,7 +10,7 @@
 	</array>
 	<key>IDECodeSnippetContents</key>
 	<string>
-override func viewWillAppear(animated: Bool) {
+override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     &lt;#code#&gt;
 }

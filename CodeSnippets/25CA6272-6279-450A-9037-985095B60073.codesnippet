@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>mirror</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>Mirror(reflecting: model).children.forEach { (child) in
+            guard let name = child.label else{
+                return
+            }
+            //realm的scheme 包含属性的所有信息，可以用来跟我们的Mirror遍历的类型进行对比容错。
+            let scheme =  managedObject.objectSchema
+            let propertype = scheme[name].type // Realm.Object对象对应属性类型
+            let modelType:Any.Type = type(of: child.value)//业务模型对象属性对应类型
+            let objectValue = managedObject[name] //数据库模型对应属性值
+            if propertype == RLMPropertyType.object {
+               //包含对象 以及数组（数组内容非基础数据类型）
+               if 对象 {
+                   ...
+               }else if 集合 {
+                   ...
+               }
+            }else
+            {
+             //包含 String ,Int ,List&lt;String&gt; List&lt;Int&gt; 等
+            }
+        }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>25CA6272-6279-450A-9037-985095B60073</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Mirror</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

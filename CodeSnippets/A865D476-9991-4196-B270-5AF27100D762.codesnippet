@@ -3,26 +3,26 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>djLabel</string>
+	<string>shadow</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>CodeExpression</string>
+		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>let label = UILabel(frame: CGRect.zero)
-label.textAlignment = .center
-label.numberOfLines = 1
-label.backgroundColor = .clear
-label.textColor = .black
-label.font = UIFont.systemFontOfSize(16)
-label.text = "&lt;#text#&gt;"
-self.view.addSubview(label)</string>
+	<string>layer.shadowColor = UIColor(hex: 0x918989, alpha: 0.06).cgColor
+        layer.shadowOffset = CGSize(width: 0, height: 3)
+        layer.shadowOpacity = 1
+        layer.shadowRadius = 6</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>B41E61D5-D5FE-4C73-BE00-3FFDCA7651DD</string>
+	<string>A865D476-9991-4196-B270-5AF27100D762</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetPlatformFamily</key>
+	<string>iphoneos</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Swift - label</string>
+	<string>create layer shadow</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

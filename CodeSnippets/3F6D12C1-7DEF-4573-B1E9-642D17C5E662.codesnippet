@@ -3,19 +3,22 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>__notificationdefaultcenter</string>
+	<string>Notification-addObserver</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>CodeBlock</string>
+		<string>CodeExpression</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>NSNotificationCenter.defaultCenter().addObserver(self, selector: "&lt;#Selector#&gt;", name: &lt;#T##String?#&gt;, object: &lt;#T##AnyObject?#&gt;)</string>
+	<string>NotificationCenter.default.addObserver(self, selector: #selector(selectedVideoChangedNotif), name: .SelectedVideoDidChange, object: nil)
+
+    @objc func selectedVideoChangedNotif(notif: Notification) {
+    }</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>3F6D12C1-7DEF-4573-B1E9-642D17C5E662</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Swift-NSNotificationCenter</string>
+	<string>Swift- add notification</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

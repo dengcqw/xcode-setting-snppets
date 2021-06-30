@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>djTypealiasClosure</string>
+	<string>djClosureTypealias</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>ClassImplementation</string>
@@ -14,8 +14,6 @@
 	<string>42AA2BDB-AA64-4260-9726-A72C20E79FBB</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
-	<key>IDECodeSnippetSummary</key>
-	<string>Closure typealias with arguments and return value snippet for Swift</string>
 	<key>IDECodeSnippetTitle</key>
 	<string>Swift - closure typealias</string>
 	<key>IDECodeSnippetUserSnippet</key>
